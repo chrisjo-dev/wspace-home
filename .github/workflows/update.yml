@@ -1,0 +1,37 @@
+# 하루 두 번 홈 화면의 "오늘의 외국어 지문"과 "최근 블로그 글"을 갱신한다.
+name: update-home
+
+on:
+  schedule:
+    - cron: "17 23 * * *"   # 08:17 KST, 아침 지문이 올라온 뒤
+    - cron: "37 9 * * *"    # 18:37 KST, 블로그 동기화 뒤
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python tools/update_recent.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "Update recent items on home"
+          git push
+      - name: Keep schedule alive
+        # 저장소에 60일 동안 커밋이 없으면 GitHub가 예약 실행을 끈다. 실행마다 다시 켜서 타이머를 초기화한다.
+        if: always()
+        run: gh api -X PUT repos/${{ github.repository }}/actions/workflows/update.yml/enable
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -1,15 +1,13 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light only"><title>wspace</title>
-<meta name="description" content="매일 외국어 읽기, 블로그, 브라우저 도구, 두뇌 게임.">
-<meta property="og:title" content="wspace"><meta property="og:description" content="매일 외국어 읽기, 블로그, 브라우저 도구, 두뇌 게임.">
-<meta property="og:url" content="https://www.wspace.ai.kr/">
+<meta name="color-scheme" content="light only"><title>wspace | 매일 외국어 읽기, 기술 블로그, 브라우저 도구</title>
+<meta name="description" content="wspace는 개발자 Chris Jo가 만든 개인 사이트입니다. 매일 아침 영어와 일본어 읽기 지문, DevOps와 AI 기술 블로그, 설치 없는 브라우저 도구, 기억력 게임을 모았습니다.">
+<link rel="canonical" href="https://www.wspace.ai.kr/">
+<meta property="og:title" content="wspace"><meta property="og:description" content="매일 외국어 읽기, 기술 블로그, 브라우저 도구, 두뇌 게임.">
+<meta property="og:url" content="https://www.wspace.ai.kr/"><meta property="og:type" content="website">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css">
+<link rel="stylesheet" href="style.css">
 <style>
-  body { margin: 0; background: #f2f4f6; color: #191f28; font-family: Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif; letter-spacing: -0.01em; word-break: keep-all; }
-  main { max-width: 560px; margin: 0 auto; padding: 48px 16px 40px; }
-  h1 { font-size: 30px; font-weight: 800; margin: 0 4px 6px; letter-spacing: -0.03em; }
-  .lead { margin: 0 4px 24px; font-size: 15px; line-height: 1.6; color: #4e5968; }
   .card { display: flex; align-items: center; gap: 16px; background: #fff; border-radius: 20px; padding: 20px; margin-bottom: 12px; color: inherit; text-decoration: none; transition: transform .15s; }
   .card:active { transform: scale(.985); }
   .icon { flex: none; width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 22px; font-weight: 800; }
@@ -19,14 +17,20 @@
   .brain .icon { background: #fff5e0; color: #e89a14; }
   .txt { flex: 1; min-width: 0; }
   .name { display: block; font-size: 18px; font-weight: 800; }
-  .desc { display: block; margin-top: 3px; font-size: 14px; line-height: 1.5; color: #4e5968; }
-  .host { display: block; margin-top: 6px; font-size: 12px; color: #8b95a1; }
+  .desc { display: block; margin-top: 3px; font-size: 14px; line-height: 1.5; color: var(--sub); }
+  .host { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
   .arrow { flex: none; color: #b0b8c1; font-size: 20px; }
-  footer { margin: 28px 4px 0; font-size: 12px; color: #8b95a1; }
-</style></head>
+  .list { background: #fff; border-radius: 20px; padding: 6px 20px; }
+  .list a { display: block; padding: 14px 0; border-top: 1px solid var(--bg); color: inherit; text-decoration: none; }
+  .list a:first-child { border-top: 0; }
+  .list .t { display: block; font-size: 16px; font-weight: 700; line-height: 1.5; }
+  .list .m { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
+  .more { display: inline-block; margin: 10px 4px 0; font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; }
+</style>
+</head>
 <body><main>
   <h1>wspace</h1>
-  <p class="lead">공부하고, 기록하고, 만들어 쓰는 것들을 모아 둔 곳이에요.</p>
+  <p class="lead">클라우드와 DevOps 일을 하는 개발자 Chris Jo가 공부하고, 기록하고, 직접 만들어 쓰는 것들을 모아 둔 곳이에요. 매일 아침 올라오는 외국어 읽기 지문, 일하며 정리한 기술 글, 설치 없이 쓰는 브라우저 도구가 있습니다.</p>
 
   <a class="card read" href="https://read.wspace.ai.kr/">
     <span class="icon" aria-hidden="true">읽</span>
@@ -38,8 +42,8 @@
 
   <a class="card blog" href="https://blog.wspace.ai.kr/">
     <span class="icon" aria-hidden="true">글</span>
-    <span class="txt"><span class="name">블로그</span>
-      <span class="desc">Notion에 쓰고 자동으로 올리는 개인 블로그. 한국어와 영어로 읽을 수 있어요.</span>
+    <span class="txt"><span class="name">기술 블로그</span>
+      <span class="desc">GitOps, Kubernetes, CI/CD 운영과 로컬 AI 모델 실험 기록. 한국어와 영어로 읽을 수 있어요.</span>
       <span class="host">blog.wspace.ai.kr</span></span>
     <span class="arrow" aria-hidden="true">›</span>
   </a>
@@ -47,7 +51,7 @@
   <a class="card util" href="https://util.wspace.ai.kr/">
     <span class="icon" aria-hidden="true">도</span>
     <span class="txt"><span class="name">BrowserTools</span>
-      <span class="desc">설치 없이 브라우저에서 바로 쓰는 도구 모음. 계산기, 변환기, 시스템 설계 도우미 등 27가지.</span>
+      <span class="desc">설치 없이 브라우저에서 바로 쓰는 도구 모음. 계산기, 이미지와 PDF 도구, 시스템 설계 도우미 등 27가지.</span>
       <span class="host">util.wspace.ai.kr</span></span>
     <span class="arrow" aria-hidden="true">›</span>
   </a>
@@ -60,5 +64,25 @@
     <span class="arrow" aria-hidden="true">›</span>
   </a>
 
-  <footer>wspace.ai.kr</footer>
-</main></body></html>
+  <h2>오늘의 외국어 지문</h2>
+  <!-- READ:START -->
+  <div class="list">
+    <a href="https://read.wspace.ai.kr/en/2026-10-13/"><span class="t">영어: 레이저 안테나</span><span class="m">10월 13일 화요일</span></a>
+    <a href="https://read.wspace.ai.kr/ja/2026-10-13/"><span class="t">일본어: 동네 빵집</span><span class="m">10월 13일 화요일</span></a>
+  </div>
+  <!-- READ:END -->
+
+  <h2>최근 블로그 글</h2>
+  <!-- BLOG:START -->
+  <div class="list">
+    <a href="https://blog.wspace.ai.kr/posts/gitops%EB%A5%BC-%EC%9A%B4%EC%98%81%ED%95%98%EB%A9%B0-%EB%8B%A4%EC%8B%9C-%EC%83%9D%EA%B0%81%ED%95%B4-%EB%B3%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%A0%84%EB%9E%B5%EA%B3%BC-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EC%A0%84%EB%9E%B5/"><span class="t">GitOps를 운영하며 다시 생각해 본 브랜치 전략과 디렉토리 전략</span><span class="m">2026년 6월 5일</span></a>
+    <a href="https://blog.wspace.ai.kr/posts/llm-%EC%84%9C%EB%B9%99-%EC%97%94%EC%A7%84%EC%9D%B4%EB%9E%80/"><span class="t">LLM 서빙 엔진이란?</span><span class="m">2026년 4월 13일</span></a>
+    <a href="https://blog.wspace.ai.kr/posts/macbook-m4%EC%97%90%EC%84%9C-whisper-%EB%AA%A8%EB%8D%B8%EC%9D%84-%EB%A1%9C%EC%BB%AC%EB%A1%9C-%EB%8F%8C%EB%A0%A4%EB%B3%B4%EC%9E%90-whispercpp-%EC%84%A4%EC%B9%98%EB%B6%80%ED%84%B0-%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%9D%8C%EC%84%B1-%EB%B3%80%ED%99%98%EA%B9%8C%EC%A7%80/"><span class="t">MacBook M4에서 Whisper 모델을 로컬로 돌려보자, whisper.cpp 설치부터 한국어 음성 변환까지</span><span class="m">2026년 4월 13일</span></a>
+    <a href="https://blog.wspace.ai.kr/posts/%EB%A7%A5%EB%B6%81-%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-%EB%8F%8C%EB%A0%A4%EB%B3%B8-qwen3-vl-8b-%EC%96%91%EC%9E%90%ED%99%94%EB%B3%84-%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%98%81%EC%88%98%EC%A6%9D-ocr-%EC%A0%95%ED%99%95%EB%8F%84%EC%86%8D%EB%8F%84-%EB%B2%A4%EC%B9%98%EB%A7%88%ED%81%AC/"><span class="t">맥북 로컬에서 돌려본 Qwen3-VL-8B 양자화별 한국어 영수증 OCR 정확도/속도 벤치마크</span><span class="m">2026년 4월 12일</span></a>
+    <a href="https://blog.wspace.ai.kr/posts/video-understanding-model-enablement/"><span class="t">Video Understanding model enablement</span><span class="m">2026년 4월 9일</span></a>
+  </div>
+  <!-- BLOG:END -->
+  <a class="more" href="https://blog.wspace.ai.kr/archive/">블로그 글 전체 보기 →</a>
+</main>
+<footer class="site-footer"><a href="https://www.wspace.ai.kr/">wspace 홈</a><a href="https://www.wspace.ai.kr/about/">소개</a><a href="https://www.wspace.ai.kr/privacy/">개인정보처리방침</a><a href="https://www.wspace.ai.kr/contact/">연락처</a></footer>
+</body></html>

@@ -1,0 +1,20 @@
+/* wspace 홈과 정책 페이지 공통 스타일 */
+:root { --bg: #f2f4f6; --card: #fff; --ink: #191f28; --sub: #4e5968; --muted: #8b95a1; --blue: #3182f6; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif; letter-spacing: -0.01em; word-break: keep-all; overflow-wrap: anywhere; }
+main { max-width: 640px; margin: 0 auto; padding: 40px 16px 32px; }
+a { color: var(--blue); }
+h1 { font-size: 30px; font-weight: 800; margin: 0 4px 6px; letter-spacing: -0.03em; }
+h2 { font-size: 19px; font-weight: 800; margin: 32px 4px 12px; letter-spacing: -0.02em; }
+.lead { margin: 0 4px 24px; font-size: 15px; line-height: 1.7; color: var(--sub); }
+.back { display: inline-block; margin: 0 4px 14px; font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; }
+.doc { background: var(--card); border-radius: 20px; padding: 24px 22px; font-size: 15px; line-height: 1.8; color: var(--ink); }
+.doc h2 { margin: 26px 0 8px; font-size: 17px; }
+.doc h2:first-child { margin-top: 0; }
+.doc p, .doc ul { margin: 0 0 10px; color: var(--sub); }
+.doc ul { padding-left: 20px; }
+.doc table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; font-size: 14px; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 8px 6px; border-top: 1px solid var(--bg); color: var(--sub); }
+.doc th { color: var(--ink); font-weight: 700; white-space: nowrap; }
+.site-footer { max-width: 640px; margin: 0 auto; padding: 8px 20px 40px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.site-footer a { color: var(--sub); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
