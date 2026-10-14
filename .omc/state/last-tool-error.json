@@ -1,7 +1,0 @@
-{
-  "tool_name": "WebFetch",
-  "tool_input_preview": "{\"url\":\"https://www3.nhk.or.jp/news/easy/\",\"prompt\":\"List all article titles and dates visible on this page, especially from October 2026.\"}",
-  "error": "Claude Code is unable to fetch from www3.nhk.or.jp",
-  "timestamp": "2026-10-13T07:23:58.557Z",
-  "retry_count": 1
-}
