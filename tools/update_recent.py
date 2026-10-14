@@ -65,6 +65,11 @@ if __name__ == "__main__":
             print(f"{key} skipped: {e}")
     if new != old:
         path.write_text(new, encoding="utf-8")
+        # 홈 내용이 바뀌었으므로 사이트맵의 홈 lastmod 도 오늘(KST)로 맞춘다.
+        today = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).strftime("%Y-%m-%d")
+        sitemap = ROOT / "sitemap.xml"
+        sitemap.write_text(re.sub(r"(<loc>https://www\.wspace\.ai\.kr/</loc><lastmod>)[^<]*", rf"\g<1>{today}",
+                                  sitemap.read_text(encoding="utf-8")), encoding="utf-8")
         print("updated")
     else:
         print("no change")

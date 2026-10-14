@@ -25,7 +25,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add index.html sitemap.xml
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "Update recent items on home"
           git push
