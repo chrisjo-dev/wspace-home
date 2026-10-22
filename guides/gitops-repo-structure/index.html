@@ -151,7 +151,7 @@
     name = Keep ours merge
     driver = true</code></pre>
     <p>이렇게 하면 STG 브랜치에서 DEV를 merge할 때 두 파일은 STG 내용이 남고, 나머지 Chart와 템플릿 파일은 평소처럼 merge됩니다.</p>
-    <p>이 장치를 쓸 때 두 가지를 확인해야 합니다. 첫째, <code>[merge "ours"]</code> 정의는 저장소 파일이 아니라 각자의 Git 설정에 들어가므로 merge하는 사람이나 자동화 환경마다 설정되어 있어야 합니다. 둘째, merge driver는 두 브랜치가 모두 그 파일을 바꿨을 때만 불립니다. 이 글을 정리하면서 빈 저장소로 시험해 보니, STG 쪽 <code>values.yaml</code>이 공통 조상 이후 그대로이고 DEV 쪽만 바뀐 경우에는 merge 결과가 DEV 값이 되었습니다. 보호 파일이 정말 유지되는지는 시험 브랜치에서 merge해 보고 확인하는 편이 안전합니다.</p>
+    <p>이 장치를 쓸 때 두 가지를 확인해야 합니다. 첫째, <code>[merge "ours"]</code> 정의는 저장소 파일이 아니라 각자의 Git 설정에 들어가므로 merge하는 사람이나 자동화 환경마다 설정되어 있어야 합니다. 둘째, merge driver는 두 브랜치가 모두 그 파일을 바꿨을 때만 불립니다. 예를 들어 STG 쪽 <code>values.yaml</code>이 공통 조상 이후 그대로이고 DEV 쪽만 바뀌었다면, Git은 충돌 없이 DEV 값을 그대로 가져오므로 merge 결과가 DEV 값이 됩니다. 보호 파일이 정말 유지되는지는 시험 브랜치에서 merge해 보고 확인하는 편이 안전합니다.</p>
 
     <h2>어느 구조를 고르든 지키는 승급 규칙</h2>
     <ul>
