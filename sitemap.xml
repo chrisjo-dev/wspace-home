@@ -4,4 +4,10 @@
   <url><loc>https://www.wspace.ai.kr/about/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://www.wspace.ai.kr/privacy/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://www.wspace.ai.kr/contact/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://www.wspace.ai.kr/guides/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://www.wspace.ai.kr/guides/gitops-repo-structure/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://www.wspace.ai.kr/guides/postmortem-report/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://www.wspace.ai.kr/guides/local-whisper-macbook/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://www.wspace.ai.kr/guides/local-vision-model-quantization/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/</loc><lastmod>2026-10-22</lastmod></url>
 </urlset>
