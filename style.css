@@ -18,3 +18,27 @@ h2 { font-size: 19px; font-weight: 800; margin: 32px 4px 12px; letter-spacing: -
 .site-footer { max-width: 640px; margin: 0 auto; padding: 8px 20px 40px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .site-footer a { color: var(--sub); text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
+.topnav { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 4px 14px; font-size: 14px; font-weight: 600; }
+.topnav a { text-decoration: none; }
+.byline { margin: 0 4px 20px; font-size: 13px; color: var(--muted); }
+.byline a { color: inherit; }
+.list { background: #fff; border-radius: 20px; padding: 6px 20px; }
+.list a { display: block; padding: 14px 0; border-top: 1px solid var(--bg); color: inherit; text-decoration: none; }
+.list a:first-child { border-top: 0; }
+.list .t { display: block; font-size: 16px; font-weight: 700; line-height: 1.5; }
+.list .m { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
+.more { display: inline-block; margin: 10px 4px 0; font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; }
+/* 가이드 글 본문 */
+.doc h3 { margin: 18px 0 6px; font-size: 15px; font-weight: 800; }
+.doc ol { margin: 0 0 10px; padding-left: 20px; color: var(--sub); }
+.doc li { margin-bottom: 4px; }
+.doc strong { color: var(--ink); }
+.doc code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--bg); border-radius: 6px; padding: 1px 5px; }
+.doc pre { margin: 0 0 12px; padding: 14px 16px; background: var(--bg); border-radius: 12px; overflow-x: auto; font-size: 13px; line-height: 1.6; }
+.doc pre code { background: none; padding: 0; font-size: inherit; overflow-wrap: normal; }
+.doc.guide th { white-space: normal; }
+.doc.guide th, .doc.guide td { overflow-wrap: break-word; }
+.doc ul.check { list-style: none; padding-left: 0; }
+.doc ul.check li { padding-left: 24px; text-indent: -24px; }
+.doc ul.check li::before { content: "☐"; display: inline-block; width: 24px; text-indent: 0; color: var(--muted); }
+@media (max-width: 480px) { .doc.guide table { font-size: 13px; } .doc.guide th, .doc.guide td { padding: 8px 4px; } }

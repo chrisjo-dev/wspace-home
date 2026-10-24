@@ -123,12 +123,6 @@
   .desc { display: block; margin-top: 3px; font-size: 14px; line-height: 1.5; color: var(--sub); }
   .host { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
   .arrow { flex: none; color: #b0b8c1; font-size: 20px; }
-  .list { background: #fff; border-radius: 20px; padding: 6px 20px; }
-  .list a { display: block; padding: 14px 0; border-top: 1px solid var(--bg); color: inherit; text-decoration: none; }
-  .list a:first-child { border-top: 0; }
-  .list .t { display: block; font-size: 16px; font-weight: 700; line-height: 1.5; }
-  .list .m { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
-  .more { display: inline-block; margin: 10px 4px 0; font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; }
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2339195232447097"
      crossorigin="anonymous"></script>
@@ -137,6 +131,7 @@
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yxuphaowch");</script>
 </head>
 <body><main>
+  <nav class="topnav" aria-label="사이트 이동"><a href="guides/">가이드</a><a href="about/">소개</a><a href="contact/">연락처</a></nav>
   <h1>wspace</h1>
   <p class="lead">클라우드와 DevOps 일을 하는 개발자 Chris Jo가 공부하고, 기록하고, 직접 만들어 쓰는 것들을 모아 둔 곳이에요. 매일 아침 올라오는 외국어 읽기 지문, 일하며 정리한 기술 글, 설치 없이 쓰는 브라우저 도구가 있습니다.</p>
 
@@ -172,6 +167,16 @@
     <span class="arrow" aria-hidden="true">›</span>
   </a>
 
+  <h2>가이드</h2>
+  <div class="list">
+    <a href="guides/gitops-repo-structure/"><span class="t">GitOps 저장소 구조 고르기: 브랜치로 나눌까, 디렉토리로 나눌까</span><span class="m">환경 분리 방식을 고르는 기준과 merge에서 운영 설정을 지키는 방법</span></a>
+    <a href="guides/postmortem-report/"><span class="t">장애와 도입 시행착오, 사후 분석 문서는 이렇게 씁니다</span><span class="m">Jenkins 장애와 SonarQube 도입 보고서로 본 사후 분석 문서의 구성</span></a>
+    <a href="guides/local-whisper-macbook/"><span class="t">맥북에서 Whisper로 한국어 음성을 로컬에서 텍스트로 바꾸기</span><span class="m">whisper.cpp 설치, 모델 크기 고르기, 반복 작업 자동화까지</span></a>
+    <a href="guides/local-vision-model-quantization/"><span class="t">로컬 비전 모델 양자화 고르기: Qwen3-VL-8B로 한국어 영수증 읽기</span><span class="m">메모리로 후보를 거르고 같은 조건에서 비교하는 절차</span></a>
+    <a href="guides/kubernetes-traffic-debugging/"><span class="t">Kubernetes 트래픽이 막혔을 때 확인하는 순서</span><span class="m">인바운드와 아웃바운드 경로를 따라 끊긴 구간을 좁히는 법</span></a>
+  </div>
+  <a class="more" href="guides/">가이드 전체 보기 →</a>
+
   <h2>오늘의 외국어 지문</h2>
   <!-- READ:START -->
   <div class="list">
@@ -203,5 +208,5 @@ document.addEventListener('click',function(e){
   gtag('event','outbound_click',{site:site,href:a.href});
 });
 </script>
-<footer class="site-footer"><a href="https://www.wspace.ai.kr/">wspace 홈</a><a href="https://www.wspace.ai.kr/about/">소개</a><a href="https://www.wspace.ai.kr/privacy/">개인정보처리방침</a><a href="https://www.wspace.ai.kr/contact/">연락처</a></footer>
+<footer class="site-footer"><a href="https://www.wspace.ai.kr/">wspace 홈</a><a href="https://www.wspace.ai.kr/guides/">가이드</a><a href="https://www.wspace.ai.kr/about/">소개</a><a href="https://www.wspace.ai.kr/privacy/">개인정보처리방침</a><a href="https://www.wspace.ai.kr/contact/">연락처</a></footer>
 </body></html>
