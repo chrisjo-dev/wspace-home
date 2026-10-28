@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only"><title>로컬 비전 모델 양자화 고르기: Qwen3-VL-8B로 한국어 영수증 읽기 | wspace 가이드</title>
+<meta name="description" content="맥북에서 Qwen3-VL-8B의 Q4_K_M, Q8_0, FP16 중 무엇을 쓸지 정하기 위해, 메모리로 후보를 거르고 같은 조건에서 정확도와 속도를 비교하는 절차를 정리했습니다.">
+<link rel="canonical" href="https://www.wspace.ai.kr/guides/local-vision-model-quantization/">
+<meta property="og:title" content="로컬 비전 모델 양자화 고르기: Qwen3-VL-8B로 한국어 영수증 읽기 | wspace 가이드"><meta property="og:description" content="맥북에서 Qwen3-VL-8B의 Q4_K_M, Q8_0, FP16 중 무엇을 쓸지 정하기 위해, 메모리로 후보를 거르고 같은 조건에서 정확도와 속도를 비교하는 절차를 정리했습니다.">
+<meta property="og:url" content="https://www.wspace.ai.kr/guides/local-vision-model-quantization/"><meta property="og:type" content="article"><meta property="og:site_name" content="wspace"><meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://www.wspace.ai.kr/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="wspace: 매일 외국어 읽기, 기술 블로그, 브라우저 도구, 두뇌 게임">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.wspace.ai.kr/guides/local-vision-model-quantization/#article",
+   "headline": "로컬 비전 모델 양자화 고르기: Qwen3-VL-8B로 한국어 영수증 읽기",
+   "description": "맥북에서 Qwen3-VL-8B의 Q4_K_M, Q8_0, FP16 중 무엇을 쓸지 정하기 위해, 메모리로 후보를 거르고 같은 조건에서 정확도와 속도를 비교하는 절차를 정리했습니다.",
+   "inLanguage": "ko-KR",
+   "datePublished": "2026-10-22",
+   "dateModified": "2026-10-22",
+   "author": {
+    "@id": "https://www.wspace.ai.kr/#person"
+   },
+   "publisher": {
+    "@id": "https://www.wspace.ai.kr/#person"
+   },
+   "mainEntityOfPage": "https://www.wspace.ai.kr/guides/local-vision-model-quantization/",
+   "url": "https://www.wspace.ai.kr/guides/local-vision-model-quantization/",
+   "image": "https://www.wspace.ai.kr/og.png",
+   "isPartOf": {
+    "@id": "https://www.wspace.ai.kr/#website"
+   },
+   "isBasedOn": [
+    "https://blog.wspace.ai.kr/posts/%EB%A7%A5%EB%B6%81-%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-%EB%8F%8C%EB%A0%A4%EB%B3%B8-qwen3-vl-8b-%EC%96%91%EC%9E%90%ED%99%94%EB%B3%84-%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%98%81%EC%88%98%EC%A6%9D-ocr-%EC%A0%95%ED%99%95%EB%8F%84%EC%86%8D%EB%8F%84-%EB%B2%A4%EC%B9%98%EB%A7%88%ED%81%AC/"
+   ],
+   "breadcrumb": {
+    "@id": "https://www.wspace.ai.kr/guides/local-vision-model-quantization/#breadcrumb"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.wspace.ai.kr/#person",
+   "name": "Chris Jo",
+   "url": "https://www.wspace.ai.kr/about/",
+   "email": "mailto:wonsang.dev@gmail.com",
+   "description": "클라우드 인프라, GitOps, CI/CD 운영을 주로 하고, 일하면서 필요한 도구를 직접 만들어 쓰는 개발자.",
+   "knowsAbout": [
+    "클라우드 인프라",
+    "DevOps",
+    "GitOps",
+    "Kubernetes",
+    "CI/CD",
+    "로컬 AI 모델"
+   ],
+   "sameAs": [
+    "https://github.com/chrisjo-dev"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.wspace.ai.kr/guides/local-vision-model-quantization/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "wspace",
+     "item": "https://www.wspace.ai.kr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "가이드",
+     "item": "https://www.wspace.ai.kr/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "로컬 비전 모델 양자화 고르기",
+     "item": "https://www.wspace.ai.kr/guides/local-vision-model-quantization/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css">
+<link rel="stylesheet" href="../../style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2339195232447097"
+     crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-43L9WRDB2N"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-43L9WRDB2N',{anonymize_ip:true});</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yxuphaowch");</script>
+</head>
+<body><main>
+  <a class="back" href="../">← 가이드 목록</a>
+  <h1>로컬 비전 모델 양자화 고르기: Qwen3-VL-8B로 한국어 영수증 읽기</h1>
+  <p class="byline">글 <a href="../../about/">Chris Jo</a>, 2026년 10월 22일 작성</p>
+  <article class="doc guide">
+    <h2>이 글은 누구를 위한 글인가</h2>
+    <p>맥북에서 Qwen3-VL 같은 비전 언어 모델로 영수증이나 문서 사진을 읽게 하고 싶은데, Ollama에서 어떤 양자화 버전을 받아야 할지 고민하는 분을 위한 글입니다. 저는 Qwen3-VL-8B-Instruct의 Q4_K_M, Q8_0, FP16 세 버전을 같은 한국어 영수증으로 비교하는 실험을 설계했습니다. 이 글은 그 실험 설계를 바탕으로, 후보를 거르고 공정하게 비교하는 순서를 정리합니다.</p>
+    <p>미리 밝혀 둡니다. 이 글에는 "어느 양자화가 몇 퍼센트 더 정확했다" 같은 결과 수치가 없습니다. 블로그 원글이 실험 환경과 방법까지만 공개되어 있어서, 확인되지 않은 수치를 적지 않았습니다. 대신 같은 비교를 직접 해 볼 때 그대로 쓸 수 있는 절차와 기록 양식을 담았습니다.</p>
+
+    <h2>양자화가 바꾸는 것</h2>
+    <p>Qwen3-VL-8B는 이미지를 받아 텍스트를 만드는 80억 파라미터 모델입니다. 세 버전은 모델 구조, 학습 데이터, 파라미터 수가 모두 같고, 각 파라미터를 몇 비트로 저장하느냐만 다릅니다. 비트를 줄이면 파일과 메모리가 작아지는 대신 값이 거칠게 반올림됩니다. 예를 들어 0.0023456789라는 가중치가 Q4에서는 0.002 정도로 저장됩니다.</p>
+    <table>
+      <tr><th>Ollama 태그</th><td>양자화, 크기</td><td>정밀도</td></tr>
+      <tr><th>qwen3-vl:8b</th><td>Q4_K_M, 약 5GB</td><td>4bit, 가장 거친 반올림</td></tr>
+      <tr><th>qwen3-vl:8b-instruct-q8_0</th><td>Q8_0, 약 8.2GB</td><td>8bit</td></tr>
+      <tr><th>qwen3-vl:8b-instruct-fp16</th><td>FP16, 약 16GB</td><td>16bit, 원본 정밀도</td></tr>
+    </table>
+    <p><code>qwen3-vl:8b</code>처럼 양자화 표기가 없는 태그가 Q4_K_M이라는 점을 기억해 두면 좋습니다. 이름만 보고 받으면 세 버전 중 가장 작은 버전을 쓰게 됩니다.</p>
+
+    <h2>1단계. 메모리로 후보를 거릅니다</h2>
+    <p>가장 먼저 볼 것은 내 장비의 통합 메모리에 모델이 들어가느냐입니다. 제 실험 장비는 다음과 같습니다.</p>
+    <table>
+      <tr><th>장비</th><td>MacBook Air (2025)</td></tr>
+      <tr><th>칩</th><td>Apple M4, CPU 10코어, GPU 10코어, Neural Engine 16코어</td></tr>
+      <tr><th>메모리</th><td>32GB 통합 메모리 (LPDDR5X, 대역폭 120GB/s)</td></tr>
+      <tr><th>OS와 도구</th><td>macOS Sequoia, Ollama</td></tr>
+    </table>
+    <p>32GB라면 약 16GB인 FP16까지 올려도 시스템이 쓰는 메모리를 빼고 여유가 있어 세 버전을 모두 후보에 넣을 수 있었습니다. 메모리가 이보다 작다면 모델 크기와 시스템 사용량을 더해 보고 들어가지 않는 버전은 처음부터 뺍니다.</p>
+    <p>메모리 대역폭도 함께 봅니다. LLM 추론은 계산보다 메모리에서 가중치를 읽어 오는 속도에 묶이는 작업입니다. 120GB/s는 8B 모델을 돌리기에 충분하다고 판단했지만, 같은 모델이라도 크기가 커질수록 한 번에 읽어야 할 양이 늘어 응답이 느려질 수 있으므로 속도는 반드시 직접 잽니다.</p>
+
+    <h2>2단계. 비교 조건을 하나로 묶습니다</h2>
+    <p>양자화만 바뀌고 나머지는 모두 같아야 비교가 됩니다.</p>
+    <ul>
+      <li><strong>같은 입력.</strong> 같은 영수증 이미지를 세 버전에 넣습니다. 저는 카페 영수증을 골랐습니다. 한글 상호명, 영어와 한글이 섞인 메뉴 이름, 금액, 날짜가 함께 있어 한국어 OCR의 어려운 부분을 고르게 담고 있기 때문입니다.</li>
+      <li><strong>같은 프롬프트.</strong> 상호명, 날짜, 품목(이름, 수량, 단가, 금액), 합계를 정해진 JSON 형식으로만 내라고 지시합니다. 설명 없이 JSON만 출력하라고 못 박아 두면 결과를 기계적으로 검사하기도 쉬워집니다.</li>
+      <li><strong>생각 모드 끄기.</strong> Qwen3의 Thinking 모드는 <code>/nothink</code>로 껐습니다. OCR 추출에는 추론 과정이 필요 없고, 생각하는 데 쓰는 토큰이 버전마다 다르면 속도 비교가 틀어집니다.</li>
+    </ul>
+<pre><code>이 영수증 이미지에서 아래 정보를 JSON 형식으로 추출해줘.
+반드시 아래 형식을 지켜줘. 추가 설명 없이 JSON만 출력해.
+{
+  "store_name": "상호명",
+  "date": "YYYY-MM-DD",
+  "items": [{"name": "품목명", "quantity": 0, "unit_price": 0, "amount": 0}],
+  "total": 0
+}</code></pre>
+
+    <h2>3단계. 무엇을 어떻게 잴지 정합니다</h2>
+    <p>정확도는 실제 영수증 내용과 모델 출력을 필드별로 눈으로 대조합니다. 확인할 지점은 다섯 가지입니다.</p>
+    <ol>
+      <li>한글 상호명을 빠진 글자나 오탈자 없이 읽는가</li>
+      <li>영어와 한글이 섞인 메뉴 이름이 바뀌는 지점에서 깨지지 않는가</li>
+      <li>금액의 자릿수와 콤마를 정확히 처리하는가</li>
+      <li>날짜를 정해진 형식으로 바꾸는가</li>
+      <li>파싱할 수 있는 올바른 JSON을 내는가</li>
+    </ol>
+    <p>필드마다 정확, 부분 오류, 완전 오류 세 단계로 적습니다. 응답 시간은 API 호출 시작부터 끝까지 걸린 시간을 3번 재서 가운데 값을 씁니다. 한 번만 재면 우연히 튄 값 하나가 결론을 좌우할 수 있기 때문입니다. 메모리 사용량은 모델이 떠 있는 동안 <code>ollama ps</code>로 확인합니다.</p>
+    <table>
+      <tr><th>기록 항목</th><td>Q4_K_M</td><td>Q8_0</td><td>FP16</td></tr>
+      <tr><th>상호명</th><td></td><td></td><td></td></tr>
+      <tr><th>메뉴 이름</th><td></td><td></td><td></td></tr>
+      <tr><th>금액</th><td></td><td></td><td></td></tr>
+      <tr><th>날짜</th><td></td><td></td><td></td></tr>
+      <tr><th>JSON 유효성</th><td></td><td></td><td></td></tr>
+      <tr><th>응답 시간(중간값, 초)</th><td></td><td></td><td></td></tr>
+      <tr><th>메모리(GB)</th><td></td><td></td><td></td></tr>
+    </table>
+
+    <h2>설계하며 부딪힌 문제와 정한 것</h2>
+    <h3>속도 비교가 생각 모드에 흔들립니다</h3>
+    <p>Thinking 모드를 켜 두면 모델이 답을 내기 전에 쓰는 토큰 수가 응답 시간에 그대로 더해집니다. 양자화에 따른 속도 차이를 보려는 실험에서 이 몫은 잡음이므로 <code>/nothink</code>로 꺼서 조건을 맞췄습니다.</p>
+    <h3>영수증 한 장의 한계</h3>
+    <p>이 실험은 통계를 내려는 것이 아니라, 양자화 수준에 따라 한국어 인식 품질이 체감할 만큼 달라지는지를 보는 정성 비교입니다. 영수증 한 장으로 "Q4가 항상 충분하다" 같은 일반 결론을 내리면 안 됩니다. 결과를 공유할 때도 표본이 몇 장이었는지 같이 적습니다.</p>
+    <h3>고르는 기준은 작업이 정합니다</h3>
+    <p>원래 질문은 "한국어 영수증 OCR이라는 구체적인 작업에서 Q4로 충분한가, FP16까지 올려야 하는가"였습니다. 위 표를 채운 뒤 내 작업에서 틀리면 안 되는 필드(예를 들어 가계부라면 금액과 날짜)가 가장 작은 버전에서도 정확하면 그 버전을 쓰고, 그렇지 않을 때만 한 단계씩 올립니다. 판단의 근거는 다른 사람의 순위표가 아니라 내 작업에서 채운 표입니다.</p>
+
+    <h2>결과를 남길 때 함께 적을 것</h2>
+    <p>양자화 비교 결과는 장비와 조건이 빠지면 다른 사람이 쓸 수 없는 숫자가 됩니다. 장비나 도구 버전이 바뀌면 같은 숫자가 나온다는 보장이 없기 때문입니다. 결과 표 위에는 최소한 다음을 적어 둡니다.</p>
+    <ul>
+      <li>장비 이름, 칩 구성(CPU, GPU 코어 수), 통합 메모리 용량과 대역폭</li>
+      <li>OS 버전과 추론 도구, 그리고 도구의 정확한 버전 번호. "최신 버전"이라고만 적으면 몇 달 뒤에는 어느 버전이었는지 알 수 없습니다</li>
+      <li>비교한 모델 태그 전체 이름(<code>qwen3-vl:8b-instruct-q8_0</code>처럼)</li>
+      <li>프롬프트 원문과 Thinking 모드 설정</li>
+      <li>입력 이미지 종류와 장 수</li>
+      <li>정확도 판정 기준(정확, 부분 오류, 완전 오류)과 시간 측정 방법(3회 중간값)</li>
+    </ul>
+    <p>이렇게 적어 두면 나중에 같은 모델의 새 버전이 나오거나 장비를 바꿨을 때 같은 표를 다시 채워 바로 비교할 수 있습니다.</p>
+
+    <h2>체크리스트</h2>
+    <ul class="check">
+      <li>기본 태그가 어떤 양자화인지 확인했다.</li>
+      <li>장비 메모리에 들어가지 않는 버전은 후보에서 뺐다.</li>
+      <li>세 버전에 같은 이미지와 같은 프롬프트를 넣었다.</li>
+      <li>Thinking 모드를 껐다.</li>
+      <li>출력 형식을 JSON으로 고정하고 유효성을 따로 확인했다.</li>
+      <li>정확도를 필드별 세 단계로 기록했다.</li>
+      <li>응답 시간은 3회 중간값, 메모리는 <code>ollama ps</code>로 쟀다.</li>
+      <li>표본 수를 결과와 함께 적었다.</li>
+    </ul>
+
+    <h2>원글</h2>
+    <p>이 가이드는 아래 블로그 글에 기록한 경험을 실무 순서에 맞게 다시 정리한 글입니다. 당시의 명령과 설정 전체는 원글에서 볼 수 있습니다.</p>
+    <ul>
+      <li><a href="https://blog.wspace.ai.kr/posts/%EB%A7%A5%EB%B6%81-%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-%EB%8F%8C%EB%A0%A4%EB%B3%B8-qwen3-vl-8b-%EC%96%91%EC%9E%90%ED%99%94%EB%B3%84-%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%98%81%EC%88%98%EC%A6%9D-ocr-%EC%A0%95%ED%99%95%EB%8F%84%EC%86%8D%EB%8F%84-%EB%B2%A4%EC%B9%98%EB%A7%88%ED%81%AC/">맥북 로컬에서 돌려본 Qwen3-VL-8B 양자화별 한국어 영수증 OCR 정확도/속도 벤치마크</a></li>
+    </ul>
+  </article>
+</main>
+<footer class="site-footer"><a href="https://www.wspace.ai.kr/">wspace 홈</a><a href="https://www.wspace.ai.kr/guides/">가이드</a><a href="https://www.wspace.ai.kr/about/">소개</a><a href="https://www.wspace.ai.kr/privacy/">개인정보처리방침</a><a href="https://www.wspace.ai.kr/contact/">연락처</a></footer>
+</body></html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only"><title>Kubernetes 트래픽이 막혔을 때 확인하는 순서 | wspace 가이드</title>
+<meta name="description" content="파드로 요청이 들어오지 않거나 파드에서 밖으로 나가지 못할 때, 공용 DNS, CoreDNS, kube-proxy, CNI가 맡는 구간을 순서대로 확인하는 방법과 실제로 겪은 연결 문제를 정리했습니다.">
+<link rel="canonical" href="https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/">
+<meta property="og:title" content="Kubernetes 트래픽이 막혔을 때 확인하는 순서 | wspace 가이드"><meta property="og:description" content="파드로 요청이 들어오지 않거나 파드에서 밖으로 나가지 못할 때, 공용 DNS, CoreDNS, kube-proxy, CNI가 맡는 구간을 순서대로 확인하는 방법과 실제로 겪은 연결 문제를 정리했습니다.">
+<meta property="og:url" content="https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/"><meta property="og:type" content="article"><meta property="og:site_name" content="wspace"><meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://www.wspace.ai.kr/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="wspace: 매일 외국어 읽기, 기술 블로그, 브라우저 도구, 두뇌 게임">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/#article",
+   "headline": "Kubernetes 트래픽이 막혔을 때 확인하는 순서",
+   "description": "파드로 요청이 들어오지 않거나 파드에서 밖으로 나가지 못할 때, 공용 DNS, CoreDNS, kube-proxy, CNI가 맡는 구간을 순서대로 확인하는 방법과 실제로 겪은 연결 문제를 정리했습니다.",
+   "inLanguage": "ko-KR",
+   "datePublished": "2026-10-22",
+   "dateModified": "2026-10-22",
+   "author": {
+    "@id": "https://www.wspace.ai.kr/#person"
+   },
+   "publisher": {
+    "@id": "https://www.wspace.ai.kr/#person"
+   },
+   "mainEntityOfPage": "https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/",
+   "url": "https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/",
+   "image": "https://www.wspace.ai.kr/og.png",
+   "isPartOf": {
+    "@id": "https://www.wspace.ai.kr/#website"
+   },
+   "isBasedOn": [
+    "https://blog.wspace.ai.kr/posts/kubernetes-%EC%9D%B8%EB%B0%94%EC%9A%B4%EB%93%9C-%ED%8A%B8%EB%9E%98%ED%94%BD-%ED%94%8C%EB%A1%9C%EC%9A%B0/",
+    "https://blog.wspace.ai.kr/posts/kubernetes-%EC%95%84%EC%9B%83%EB%B0%94%EC%9A%B4%EB%93%9C-%ED%8A%B8%EB%9E%98%ED%94%BD-%ED%94%8C%EB%A1%9C%EC%9A%B0/",
+    "https://blog.wspace.ai.kr/posts/sonarqube-%EB%8F%84%EC%9E%85-%EC%8B%9C%ED%96%89%EC%B0%A9%EC%98%A4-%EB%B0%8F-%EB%AC%B8%EC%A0%9C%EC%A0%90-%EB%B3%B4%EA%B3%A0%EC%84%9C/"
+   ],
+   "breadcrumb": {
+    "@id": "https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/#breadcrumb"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.wspace.ai.kr/#person",
+   "name": "Chris Jo",
+   "url": "https://www.wspace.ai.kr/about/",
+   "email": "mailto:wonsang.dev@gmail.com",
+   "description": "클라우드 인프라, GitOps, CI/CD 운영을 주로 하고, 일하면서 필요한 도구를 직접 만들어 쓰는 개발자.",
+   "knowsAbout": [
+    "클라우드 인프라",
+    "DevOps",
+    "GitOps",
+    "Kubernetes",
+    "CI/CD",
+    "로컬 AI 모델"
+   ],
+   "sameAs": [
+    "https://github.com/chrisjo-dev"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "wspace",
+     "item": "https://www.wspace.ai.kr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "가이드",
+     "item": "https://www.wspace.ai.kr/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Kubernetes 트래픽 디버깅 순서",
+     "item": "https://www.wspace.ai.kr/guides/kubernetes-traffic-debugging/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.min.css">
+<link rel="stylesheet" href="../../style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2339195232447097"
+     crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-43L9WRDB2N"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-43L9WRDB2N',{anonymize_ip:true});</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yxuphaowch");</script>
+</head>
+<body><main>
+  <a class="back" href="../">← 가이드 목록</a>
+  <h1>Kubernetes 트래픽이 막혔을 때 확인하는 순서</h1>
+  <p class="byline">글 <a href="../../about/">Chris Jo</a>, 2026년 10월 22일 작성</p>
+  <article class="doc guide">
+    <h2>이 글은 누구를 위한 글인가</h2>
+    <p>Kubernetes에서 "밖에서 파드로 요청이 안 들어온다"거나 "파드에서 외부 API로 못 나간다"는 문제를 만났을 때, 어디부터 봐야 할지 막막한 분을 위한 글입니다. 저는 인바운드와 아웃바운드 트래픽이 지나가는 구간을 각각 정리해 두었고, SonarQube를 Minikube에 올려 Jenkins와 연결하면서 실제로 연결 문제를 두 번 겪었습니다. 그 정리와 경험을 바탕으로, 트래픽이 지나가는 순서대로 의심할 곳을 좁혀 가는 방법을 적었습니다.</p>
+    <p>원칙은 하나입니다. 패킷이 지나가는 순서대로 앞에서부터 확인합니다. 어느 구간에서 끊겼는지 모르는 채로 설정을 이것저것 바꾸면 원인을 찾기 더 어려워집니다.</p>
+
+    <h2>먼저 구간별 담당자를 나눕니다</h2>
+    <table>
+      <tr><th>구간</th><td>담당</td><td>하는 일</td></tr>
+      <tr><th>공용 도메인 해석</th><td>공용 DNS (Route53, Cloud DNS 등)</td><td>클라이언트가 쓰는 도메인을 로드밸런서 IP로 바꿉니다</td></tr>
+      <tr><th>클러스터 내부 이름 해석</th><td>CoreDNS</td><td>Service 이름을 ClusterIP로 바꿉니다. 파드가 외부 도메인을 물을 때는 상위 DNS로 넘깁니다</td></tr>
+      <tr><th>Service에서 파드로 분배</th><td>kube-proxy (iptables 또는 ipvs)</td><td>Service나 NodePort로 온 요청의 목적지를 파드 IP로 바꿉니다(DNAT)</td></tr>
+      <tr><th>파드 네트워크</th><td>CNI 플러그인 (Calico, Flannel, Cilium 등)</td><td>파드 사이 라우팅, 그리고 밖으로 나갈 때 파드 IP를 노드 IP로 바꿉니다(SNAT)</td></tr>
+    </table>
+    <p>이 표에서 기억할 것은 두 가지입니다. 클라이언트가 쓰는 공개 도메인은 CoreDNS가 아니라 공용 DNS가 해석합니다. 그리고 kube-proxy는 들어오는 요청과 클러스터 내부 요청을 나누는 역할이라, 파드에서 외부로 나가는 요청에는 직접 끼어들지 않습니다.</p>
+
+    <h2>인바운드: 밖에서 파드로 안 들어올 때</h2>
+    <h3>NodePort나 LoadBalancer로 들어오는 경우</h3>
+    <p>경로는 공용 DNS, 외부 로드밸런서, 노드, kube-proxy의 DNAT, CNI, 파드 순입니다. 이 경로에는 CoreDNS가 등장하지 않습니다. 클러스터 내부에서 이름을 물어볼 일이 없기 때문입니다. 그러니 이 경우 DNS 문제가 의심된다면 클러스터 안이 아니라 클라이언트 쪽 공용 DNS 설정을 봐야 합니다.</p>
+    <h3>Ingress로 들어오는 경우</h3>
+    <p>경로가 더 깁니다.</p>
+    <ol>
+      <li>공용 DNS가 <code>myapp.example.com</code>을 로드밸런서 IP로 해석합니다.</li>
+      <li>로드밸런서가 Host 헤더를 그대로 둔 채 Ingress Controller로 넘깁니다.</li>
+      <li>Ingress Controller(nginx, HAProxy, Traefik 등)가 Host 규칙을 보고 백엔드 Service를 고릅니다.</li>
+      <li>Service를 이름으로 참조하면 CoreDNS가 <code>myapp-svc.default.svc.cluster.local</code> 같은 이름을 ClusterIP로 바꿉니다.</li>
+      <li>kube-proxy가 ClusterIP를 실제 파드 IP로 바꿉니다.</li>
+      <li>CNI가 파드까지 전달합니다.</li>
+    </ol>
+    <p>디버깅도 이 번호 순서대로 합니다. 도메인이 로드밸런서 IP로 풀리는지, Ingress가 해당 Host 규칙을 갖고 있는지, 백엔드 Service 이름이 맞는지, Service 뒤에 파드가 붙어 있는지를 차례로 봅니다. 일부 컨트롤러는 Kubernetes API로 Endpoints를 직접 받아 가기 때문에 4번의 CoreDNS 질의가 거의 없을 수도 있습니다. 쓰는 컨트롤러가 어느 방식인지 알아 두면 의심할 곳이 하나 줄어듭니다.</p>
+    <h3>요청이 파드에 도착한 뒤 다른 서비스를 부르는 경우</h3>
+    <p>인바운드 요청을 받은 파드가 <code>http://users-svc.default:8000</code> 같은 다른 Service를 부를 때도 CoreDNS, kube-proxy, 대상 파드 순으로 같은 길을 한 번 더 지납니다. 첫 번째 구간은 정상인데 응답이 늦거나 실패한다면 이 두 번째 호출을 봅니다.</p>
+
+    <h2>아웃바운드: 파드에서 밖으로 못 나갈 때</h2>
+    <ol>
+      <li><strong>DNS.</strong> 파드가 <code>api.github.com</code>을 CoreDNS에 묻고, CoreDNS는 <code>/etc/resolv.conf</code>에 적힌 상위 DNS(클라우드 제공 DNS나 8.8.8.8 등)로 넘겨 IP를 받아 옵니다.</li>
+      <li><strong>라우팅.</strong> CNI가 파드의 패킷을 노드 인터페이스로 보냅니다. 파드 IP(예: 10.244.x.x)는 클러스터 안에서만 쓰는 사설 IP라 바깥에서는 이 주소를 알지도, 찾아오지도 못합니다.</li>
+      <li><strong>SNAT.</strong> 노드의 iptables(또는 nftables)가 출발지를 파드 IP에서 노드 IP로 바꿉니다. Masquerade라고도 부릅니다.</li>
+      <li><strong>응답.</strong> 응답이 노드로 돌아오면 NAT 테이블을 보고 원래 파드로 돌려보냅니다.</li>
+    </ol>
+    <p>여기서 실무에 바로 쓰이는 사실이 하나 나옵니다. 외부 서버는 요청이 파드가 아니라 노드 IP에서 온 것으로 봅니다. 외부 API나 방화벽에 허용 IP를 등록해야 한다면 파드 IP가 아니라 노드가 밖으로 나갈 때 쓰는 IP를 등록해야 합니다. 또 아웃바운드는 kube-proxy를 지나지 않으므로, 밖으로 못 나갈 때는 kube-proxy보다 DNS, CNI, 노드의 NAT를 먼저 봅니다.</p>
+    <p>같은 클러스터 안의 파드끼리는 NAT 없이 CNI가 바로 라우팅합니다. 반대로 바깥에서 파드 IP나 ClusterIP로 직접 들어오는 것은 불가능하고, NodePort, LoadBalancer, Ingress 중 하나를 거쳐야 합니다.</p>
+
+    <h2>실제로 겪은 문제와 해결</h2>
+    <h3>Ingress가 동작하지 않았습니다</h3>
+    <p>SonarQube를 Helm Chart 기본값으로 Minikube에 설치했더니 Ingress 설정 오류가 났습니다. 원인은 Ingress Controller를 지정하지 않은 것이었습니다. 인바운드 순서로 보면 3번, Ingress Controller가 규칙을 가져가는 구간에서 끊긴 것입니다. values 파일에 <code>ingressClassName: haproxy</code>를 넣고 호스트를 <code>sonarqube.127.0.0.1.nip.io</code>로 정해 해결했습니다.</p>
+<pre><code>ingress:
+  enabled: true
+  ingressClassName: haproxy
+  hosts:
+    - name: sonarqube.127.0.0.1.nip.io</code></pre>
+    <h3>파드에서 호스트의 Jenkins로 Webhook이 가지 않았습니다</h3>
+    <p>SonarQube가 분석을 끝내고 Quality Gate 결과를 Jenkins에 Webhook으로 알려야 하는데, Jenkins가 응답을 받지 못하고 시간 초과로 끝났습니다. Jenkins는 Minikube 밖 호스트에서 돌고 있었고, Minikube 안의 파드에서는 호스트로 바로 접근할 수 없는 네트워크 구조였습니다. 파드에서 밖으로 나가는 방향, 즉 아웃바운드 문제였습니다. Webhook 주소를 <code>http://host.minikube.internal:8080/sonarqube-webhook/</code>로 바꿔 해결했습니다. 같은 Webhook에서 경로를 <code>/sonar-webhook/</code>으로 잘못 적은 적도 있었는데, 플러그인 표준 경로인 <code>/sonarqube-webhook/</code>으로 맞췄습니다. 네트워크 경로가 뚫려도 받는 쪽 경로가 틀리면 연동은 여전히 실패하므로, 주소와 경로를 따로따로 확인합니다.</p>
+
+    <h2>체크리스트</h2>
+    <ul class="check">
+      <li>문제가 인바운드인지 아웃바운드인지 먼저 나눴다.</li>
+      <li>NodePort나 LoadBalancer 경로라면 DNS 의심은 클라이언트 쪽 공용 DNS부터 본다.</li>
+      <li>Ingress 경로라면 공용 DNS, 로드밸런서, Ingress 규칙(ingressClassName과 Host), Service 이름, 파드 순으로 확인했다.</li>
+      <li>Service 뒤에 실제로 파드가 붙어 있다.</li>
+      <li>아웃바운드라면 CoreDNS의 상위 DNS 전달, CNI 라우팅, 노드 SNAT 순으로 확인했다.</li>
+      <li>외부 허용 목록에는 파드 IP가 아니라 노드가 밖으로 나갈 때 쓰는 IP를 등록했다.</li>
+      <li>로컬 클러스터에서 호스트 서비스를 부를 때 호스트 접근용 주소(Minikube라면 <code>host.minikube.internal</code>)를 썼다.</li>
+      <li>주소뿐 아니라 경로와 포트도 대상 서비스의 표준 값과 맞췄다.</li>
+    </ul>
+
+    <h2>원글</h2>
+    <p>이 가이드는 아래 블로그 글에 기록한 경험을 실무 순서에 맞게 다시 정리한 글입니다. 당시의 명령과 설정 전체는 원글에서 볼 수 있습니다.</p>
+    <ul>
+      <li><a href="https://blog.wspace.ai.kr/posts/kubernetes-%EC%9D%B8%EB%B0%94%EC%9A%B4%EB%93%9C-%ED%8A%B8%EB%9E%98%ED%94%BD-%ED%94%8C%EB%A1%9C%EC%9A%B0/">Kubernetes 인바운드 트래픽 플로우</a></li>
+      <li><a href="https://blog.wspace.ai.kr/posts/kubernetes-%EC%95%84%EC%9B%83%EB%B0%94%EC%9A%B4%EB%93%9C-%ED%8A%B8%EB%9E%98%ED%94%BD-%ED%94%8C%EB%A1%9C%EC%9A%B0/">Kubernetes 아웃바운드 트래픽 플로우</a></li>
+      <li><a href="https://blog.wspace.ai.kr/posts/sonarqube-%EB%8F%84%EC%9E%85-%EC%8B%9C%ED%96%89%EC%B0%A9%EC%98%A4-%EB%B0%8F-%EB%AC%B8%EC%A0%9C%EC%A0%90-%EB%B3%B4%EA%B3%A0%EC%84%9C/">SonarQube 도입 시행착오 및 문제점 보고서</a></li>
+    </ul>
+  </article>
+</main>
+<footer class="site-footer"><a href="https://www.wspace.ai.kr/">wspace 홈</a><a href="https://www.wspace.ai.kr/guides/">가이드</a><a href="https://www.wspace.ai.kr/about/">소개</a><a href="https://www.wspace.ai.kr/privacy/">개인정보처리방침</a><a href="https://www.wspace.ai.kr/contact/">연락처</a></footer>
+</body></html>
