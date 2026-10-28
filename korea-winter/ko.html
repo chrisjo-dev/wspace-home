@@ -1,26 +1,26 @@
 <!doctype html>
 <html lang="ko">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>한국의 겨울 87일</title>
-<meta name="description" content="한국의 겨울 87일 동안 언제, 어디서, 무엇을 할지 통계로 고르는 안내. 축제, 스키, 온천, 제철 해산물, 해돋이.">
+<meta name="description" content="한국의 겨울 87일을 카드 한 장씩 넘기며 고르는 안내. 축제, 스키, 온천, 제철 해산물, 새해 해돋이.">
 <link rel="canonical" href="https://www.wspace.ai.kr/korea-winter/ko.html">
 <link rel="alternate" hreflang="en" href="https://www.wspace.ai.kr/korea-winter/">
 <link rel="alternate" hreflang="ko" href="https://www.wspace.ai.kr/korea-winter/ko.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="한국의 겨울 87일">
-<meta property="og:description" content="한국의 겨울 87일 동안 언제, 어디서, 무엇을 할지 통계로 고르는 안내. 축제, 스키, 온천, 제철 해산물, 해돋이.">
+<meta property="og:description" content="한국의 겨울 87일을 카드 한 장씩 넘기며 고르는 안내. 축제, 스키, 온천, 제철 해산물, 새해 해돋이.">
 <meta property="og:url" content="https://www.wspace.ai.kr/korea-winter/ko.html">
 <meta property="og:image" content="https://www.wspace.ai.kr/korea-winter/photos/hero.jpg">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-43L9WRDB2N"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-43L9WRDB2N',{anonymize_ip:true});</script>
-
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#0E1422">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700;900&family=Gothic+A1:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;800&family=Gothic+A1:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="photos/hero-sm.jpg" media="(max-width: 600px)">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-43L9WRDB2N"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-43L9WRDB2N',{anonymize_ip:true});</script>
 <style>
-/* Layout: an almanac. One big number (87 days) opens, then a Dec–Feb calendar is the spine; every later section answers "when / where / why now" with one chart and one line of advice. Left-aligned, single reading column, charts allowed wider. Cold blue = ice and snow, camellia red = city and warmth. */
 :root{
   --snow:#F7F9FB; --paper:#FFFFFF; --ink:#172033; --ink-2:#4A5568; --hair:#DDE3EA;
   --cold:#2F72C4; --warm:#C8333F; --cold-wash:#E4EDF8; --warm-wash:#F9E7E9;
@@ -39,24 +39,6 @@
   --cold:#4F8FD8; --warm:#E0565F; --cold-wash:#18263F; --warm-wash:#3A1B22;
   --grid:#1F2840; --axis:#34405A; --mute:#4A5670; --neutral:#222B40;
   --ok:#73C99A; --ok-bg:#12301F; --late:#E5B75F; --late-bg:#372A10; --off:#EE8C8F; --off-bg:#3A1A1E; color-scheme:dark;}
-*{box-sizing:border-box}
-body{background:var(--snow);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:break-word}
-a{color:var(--cold);text-underline-offset:3px}
-a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--cold);outline-offset:2px;border-radius:4px}
-.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--f-disp);margin:0;text-wrap:balance;line-height:1.3}
-p{margin:0}
-.num{font-variant-numeric:tabular-nums}
-
-/* hero */
-.hero{padding-block:56px 24px;display:grid;grid-template-columns:auto 1fr;gap:12px 40px;align-items:end}
-.big{font-family:var(--f-disp);font-weight:900;font-size:clamp(120px,22vw,250px);line-height:.8;letter-spacing:-.04em;color:var(--ink);display:flex;align-items:flex-start}
-.big small{font-size:.28em;font-weight:700;letter-spacing:0;margin-top:.12em;margin-left:.06em}
-.hero h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;max-width:22ch}
-.hero .lead{grid-column:1 / -1;font-size:17px;color:var(--ink-2);max-width:62ch;margin-top:12px}
-.asof{grid-column:1 / -1;font-size:13px;color:var(--ink-2)}
-
-/* almanac */
 .almanac{margin-top:8px;background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:18px 18px 12px;position:relative}
 .alm-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--ink-2);margin-bottom:8px}
 .alm-legend span{display:inline-flex;align-items:center;gap:7px}
@@ -78,16 +60,6 @@ details.tv summary{cursor:pointer;color:var(--ink-2);width:max-content}
 details.tv table{border-collapse:collapse;margin-top:8px;font-size:13.5px;width:100%}
 details.tv th,details.tv td{border-top:1px solid var(--hair);padding:6px 10px;text-align:left}
 details.tv td+td{font-variant-numeric:tabular-nums}
-
-/* sections */
-main{display:grid;gap:88px;padding-block:72px 40px}
-section{display:grid;gap:18px;min-width:0;scroll-margin-top:24px}
-.kicker{font-size:14px;color:var(--ink-2);font-weight:500}
-h2{font-size:clamp(26px,3.2vw,34px);font-weight:700;max-width:24ch}
-.body{max-width:62ch;color:var(--ink)}
-.body b{font-weight:700}
-.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start}
-.split > *{min-width:0}
 figure{margin:0;display:grid;gap:8px;min-width:0;position:relative}
 figcaption{font-size:13px;color:var(--ink-2)}
 .plot{position:relative;min-width:0}
@@ -95,9 +67,6 @@ figcaption{font-size:13px;color:var(--ink-2)}
 .legend{display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
 .legend span{display:inline-flex;gap:6px;align-items:center}
 .legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
-.do{font-size:15.5px;border-top:2px solid var(--ink);padding-top:12px;max-width:62ch}
-.do b{font-family:var(--f-disp);font-weight:700;margin-right:8px}
-
 /* status grid */
 .status{border-collapse:separate;border-spacing:0;width:100%;font-size:14px}
 .status th,.status td{padding:9px 10px;border-bottom:1px solid var(--hair);text-align:left;vertical-align:middle}
@@ -126,203 +95,281 @@ figcaption{font-size:13px;color:var(--ink-2)}
 .food .m{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--grid)}
 .food .m.on{background:var(--cold)}
 .food td.name{font-weight:700}
+/* Card deck (approved boards W01 to W06): one card per screen, vertical scroll-snap, numbers in bottom sheets */
+:root{ --ink-3:#7A8596; --night:#0E1422; --on-photo:#FFFFFF; --scrim:rgba(14,20,34,.55); --r-lg:24px; }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --ink-3:#8A95A8; }}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--night);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow:hidden}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}
+ol,ul{list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--cold);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+html[lang="ko"] body{word-break:keep-all;overflow-wrap:break-word}
+.d-only{display:none}
 
-/* plan */
-.plan{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
-.plan li{padding:16px 18px 18px 0;display:grid;gap:8px;align-content:start;border-right:1px solid var(--hair);margin-right:18px}
-.plan li:last-child{border-right:0;margin-right:0}
-.plan .when{font-family:var(--f-disp);font-weight:700;font-size:19px}
-.plan .what{font-size:15px}
-.plan .why{font-size:13px;color:var(--ink-2)}
-.sources{font-size:13px;color:var(--ink-2);columns:2;column-gap:32px;padding-left:18px;margin:0}
-.sources li{break-inside:avoid;margin-bottom:5px}
-footer{padding-block:24px 56px;font-size:13px;color:var(--ink-2);border-top:1px solid var(--hair);display:grid;gap:12px}
+/* stage: full screen on phones, a framed card with contents and arrows on wide screens */
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;gap:32px}
+.side,.nav{display:none}
+.frame{position:relative;width:100%;height:100%;overflow:hidden;background:var(--paper)}
+.deck{height:100%;overflow-y:auto;overscroll-behavior:contain;scroll-snap-type:y mandatory;scrollbar-width:none;outline:none}
+.deck::-webkit-scrollbar{display:none}
+.card{position:relative;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;display:flex;flex-direction:column;background:var(--paper);contain:layout paint}
 
+/* progress and counter, one overlay for the whole deck */
+.bar{position:absolute;inset:0 0 auto 0;z-index:3;padding:calc(12px + env(safe-area-inset-top,0px)) 16px 0;pointer-events:none}
+.bar::before{content:"";position:absolute;inset:0 0 -56px 0;background:linear-gradient(to bottom,rgba(14,20,34,.55),rgba(14,20,34,0));z-index:-1}
+.prog{display:flex;gap:4px}
+.prog i{flex:1;height:3px;border-radius:999px;background:rgba(255,255,255,.35)}
+.prog i.on{background:var(--on-photo)}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--on-photo);font-size:12px;font-weight:700;letter-spacing:.02em}
+.lang{pointer-events:auto;text-decoration:none;border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:3px 10px}
+.bar.light::before{opacity:0}
+.bar.light .meta{color:var(--ink-2)}
+.bar.light .lang{border-color:var(--hair)}
+.bar.light .prog i{background:var(--hair)}
+.bar.light .prog i.on{background:var(--ink)}
 
-/* scene slots: an illustration now, a licensed photo later (same box) */
-.shot{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:10/3;background:var(--cold-wash);max-width:100%}
-.shot svg,.shot img{display:block;width:100%;height:100%;object-fit:cover}
-.shot .credit{position:absolute;right:10px;bottom:8px;font-size:11.5px;line-height:1.4;background:var(--paper);color:var(--ink-2);padding:2px 9px;border-radius:999px;opacity:.92;max-width:80%}
-.shot img{position:absolute;inset:0}
-.shot .credit a{color:inherit;text-decoration:none}
-.shot .credit a:hover{text-decoration:underline}
-.hero .shot{grid-column:1 / -1;aspect-ratio:16/5;margin-top:16px}
-@media (max-width:640px){ .shot{aspect-ratio:16/7} .hero .shot{aspect-ratio:16/8} .shot .credit{font-size:10px;padding:1px 7px;right:6px;bottom:6px;max-width:94%;border-radius:6px} }
-@media (max-width:860px){ .split{grid-template-columns:1fr;gap:20px} .plan{grid-template-columns:1fr 1fr} .plan li:nth-child(2){border-right:0;margin-right:0} .plan li:nth-child(n+3){border-top:1px solid var(--hair)} }
-@media (max-width:640px){ .hero{grid-template-columns:1fr} .figs{grid-template-columns:1fr} .plan{grid-template-columns:1fr} .plan li{border-right:0;margin-right:0;border-top:1px solid var(--hair)} .plan li:first-child{border-top:0} .sources{columns:1} .almanac{padding:14px 10px 10px} }
+/* photo credit */
+.credit{position:absolute;right:12px;font-size:10px;line-height:1.5;color:var(--on-photo);background:var(--scrim);border-radius:999px;padding:2px 8px;text-decoration:none;max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* cover */
+.cover{color:var(--on-photo);background:var(--night)}
+.cover > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,20,34,.45) 0%,rgba(14,20,34,.1) 30%,rgba(14,20,34,.75) 62%,rgba(14,20,34,.95) 100%)}
+.cover .credit{top:calc(64px + env(safe-area-inset-top,0px));z-index:2}
+.cover-body{position:relative;z-index:1;margin-top:auto;padding:0 24px calc(32px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:16px}
+.big{font-family:var(--f-disp);font-weight:800;font-size:clamp(96px,30vw,120px);line-height:.82;letter-spacing:-.04em}
+.big small{font-size:.26em;letter-spacing:0;margin-left:8px}
+.cover h1{font-family:var(--f-disp);font-weight:800;font-size:28px;line-height:1.2;color:var(--on-photo)}
+.lead{color:rgba(255,255,255,.82)}
+.topics{display:flex;flex-wrap:wrap;gap:8px}
+.topics a{display:block;text-decoration:none;font-size:12px;font-weight:700;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:4px 10px;color:rgba(255,255,255,.9)}
+.start{margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;height:52px;border-radius:999px;background:var(--on-photo);color:#172033;font-weight:700;text-decoration:none}
+.start svg,.next svg,.nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* story card */
+.photo{position:relative;flex:0 1 52%;min-height:26%;background:var(--cold-wash)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo .credit{bottom:calc(var(--r-lg) + 8px)}
+.k-sea .photo{flex-basis:40%}
+.panel{position:relative;z-index:2;flex:1 0 auto;margin-top:calc(-1 * var(--r-lg));background:var(--paper);border-radius:var(--r-lg) var(--r-lg) 0 0;padding:24px 24px calc(20px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:16px;min-height:0}
+.when{align-self:flex-start;font-size:12px;font-weight:700;color:var(--cold);background:var(--cold-wash);border-radius:999px;padding:5px 12px}
+.when.warm{color:var(--warm);background:var(--warm-wash)}
+.card h2{font-family:var(--f-disp);font-weight:800;font-size:clamp(23px,7.2vw,28px);line-height:1.2;letter-spacing:-.01em}
+.stat{display:flex;align-items:baseline;gap:12px}
+.stat b{font-family:var(--f-disp);font-weight:800;font-size:clamp(52px,16vw,64px);line-height:.9;letter-spacing:-.03em;white-space:nowrap}
+.stat b small{font-size:.4em;letter-spacing:0;margin-left:2px}
+.stat span{font-size:14px;color:var(--ink-2);line-height:1.4;max-width:17ch}
+.so{display:flex;gap:12px;align-items:flex-start;border-top:2px solid var(--ink);padding-top:12px}
+.so strong{font-family:var(--f-disp);font-weight:800;flex:none}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.more,.pri{display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;border:1px solid var(--hair);border-radius:999px;padding:9px 16px;background:var(--paper);color:var(--ink);text-decoration:none}
+.pri{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.next{font-size:12px;color:var(--ink-3);display:inline-flex;align-items:center;gap:6px}
+.eat li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 0;border-top:1px solid var(--hair);align-items:baseline}
+.eat li:first-child{border-top:0;padding-top:0}
+.eat b{font-weight:700}
+.eat em{font-style:normal;font-weight:400;color:var(--ink-3);font-size:14px;margin-left:4px}
+.eat span{font-size:14px;color:var(--ink-2);text-align:right}
+.eat strong{display:block;font-family:var(--f-disp);font-weight:800;color:var(--cold)}
+
+/* plan and sources: light cards without a photo */
+.plain{background:var(--snow);padding:calc(88px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px));gap:20px}
+.kick{font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
+.steps{position:relative}
+.steps::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--hair)}
+.steps li{position:relative;padding:12px 0 12px 32px}
+.steps li::before{content:"";position:absolute;left:0;top:15px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--cold);box-sizing:border-box}
+.steps li.w::before{border-color:var(--warm)}
+.steps b{display:block;font-family:var(--f-disp);font-weight:800;font-size:20px}
+.steps p{font-size:14px;color:var(--ink-2);margin-top:2px}
+.acts{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.acts > *{padding:13px 12px}
+.src-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;font-size:13px;color:var(--ink-2);display:grid;gap:12px;align-content:start;padding-right:4px}
+.src-scroll .sources{columns:1;padding-left:18px;margin:0;display:grid;gap:4px}
+.src-scroll a{color:var(--cold)}
+
+/* bottom sheet */
+.sheet{position:fixed;inset:auto 0 0 0;margin:0 auto;width:100%;max-width:560px;max-height:88dvh;padding:0;border:0;border-radius:var(--r-lg) var(--r-lg) 0 0;background:var(--paper);color:var(--ink);overflow:hidden}
+.sheet.wide{max-width:880px}
+.sheet::backdrop{background:rgba(14,20,34,.5)}
+.sheet[open]{animation:up .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.sheet-in{max-height:88dvh;overflow-y:auto;overscroll-behavior:contain;padding:12px 24px calc(24px + env(safe-area-inset-bottom,0px));display:grid;gap:20px}
+.grab{justify-self:center;width:40px;height:4px;border-radius:999px;background:var(--hair)}
+.sheet h3{font-family:var(--f-disp);font-weight:800;font-size:20px}
+.sheet .note{font-size:14px;color:var(--ink-2)}
+.sheet .figs{grid-template-columns:1fr;gap:16px}
+.close{width:100%;font-weight:700;font-size:14px;padding:12px;border-radius:999px;background:var(--snow);border:1px solid var(--hair)}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%);z-index:20;background:var(--ink);color:var(--paper);font-size:14px;font-weight:700;padding:10px 18px;border-radius:999px}
+@media (prefers-reduced-motion:reduce){.deck{scroll-behavior:auto}.sheet[open]{animation:none}}
+
+/* wide screens: approved desktop board W06 */
+@media (min-width:600px){
+  .stage::before{content:"";position:absolute;inset:-40px;background:var(--night) url("photos/ice-sm.jpg") center/cover;filter:blur(40px) brightness(.45);transform:translateZ(0)}
+  .frame{width:420px;height:min(800px,calc(100dvh - 48px));border-radius:var(--r-lg);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .bar{padding-top:12px}
+  .nav{position:relative;display:flex;flex-direction:column;gap:12px}
+  .nav button{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:var(--on-photo);display:grid;place-items:center}
+  .nav button:disabled{opacity:.35;cursor:default}
+  .m-only{display:none}.d-only{display:inline}
+  .card h2{font-size:28px}
+  .stat b{font-size:64px}
+  .big{font-size:120px}
+}
+@media (min-width:960px){
+  .side{position:relative;display:flex;flex-direction:column;gap:16px;width:220px;color:rgba(255,255,255,.75);font-size:14px}
+  .side-t{color:var(--on-photo);font-family:var(--f-disp);font-weight:800;font-size:20px;line-height:1.3}
+  .toc{display:grid;gap:4px}
+  .toc a{display:block;padding:3px 0;text-decoration:none;color:rgba(255,255,255,.55)}
+  .toc a:hover{color:var(--on-photo)}
+  .toc a[aria-current="true"]{color:var(--on-photo);font-weight:700}
+  kbd{font-family:var(--f-body);font-size:12px;border:1px solid rgba(255,255,255,.35);border-radius:4px;padding:1px 6px}
+}
+@media (max-height:740px){
+  .photo{flex-basis:42%}
+  .k-sea .photo{flex-basis:30%}
+  .eat li{padding:8px 0}
+  .panel{gap:12px;padding-top:20px}
+  .card h2{font-size:22px}
+  .stat b{font-size:48px}
+  .big{font-size:88px}
+  .cover-body{gap:12px}
+  .plain{padding-top:calc(72px + env(safe-area-inset-top,0px));gap:14px}
+  .steps li{padding:8px 0 8px 32px}
+  .steps li::before{top:11px}
+  .steps b{font-size:18px}
+}
+
 </style>
-
-<header class="wrap hero">
-  <div class="big num" aria-label="87일">87<small>일</small></div>
-  <h1>한국의 겨울은 평균 87일입니다. 그 사이에 할 일을 한 장에 모았습니다.</h1>
-  <p class="lead">기상청 평년값으로 겨울은 12월 4일에 시작해 2월 28일에 끝납니다. 이전 평년값(1981~2010)보다 7일 짧아졌습니다. 이 페이지는 그 87일 동안 <b>언제, 어디서, 무엇을 할지</b> 정하도록 돕습니다. 달력에서 시기를 고르고, 아래 숫자로 이유를 확인하세요.</p>
-  <p class="asof"><a href="./" lang="en" hreflang="en">Read in English</a>. 기준일 2026년 10월 27일. 지방 겨울 축제의 2027년 일정은 아직 발표되지 않아 2026년 일정으로 표시했습니다.</p>
-  <figure class="shot" data-scene="hero"></figure>
-</header>
-
-<div class="wrap">
-  <figure class="almanac" id="almanac" style="margin:0">
-    <div class="alm-legend" aria-hidden="true">
-      <span><i class="key" style="background:var(--warm)"></i>도시 행사</span>
-      <span><i class="key" style="background:var(--cold)"></i>얼음과 눈 축제</span>
-      <span><i class="key" style="background:var(--mute)"></i>시즌</span>
-      <span><i class="key dash"></i>2026년 일정 (2027년 미발표)</span>
+</head>
+<body>
+<div class="stage">
+  <aside class="side" aria-label="목차">
+    <p class="side-t">한국의 겨울 87일</p>
+    <ol class="toc"><li><a href="#c1" data-i="0">표지</a></li><li><a href="#c2" data-i="1">서울 빛축제</a></li><li><a href="#c3" data-i="2">얼음낚시</a></li><li><a href="#c4" data-i="3">설경</a></li><li><a href="#c5" data-i="4">스키</a></li><li><a href="#c6" data-i="5">온천</a></li><li><a href="#c7" data-i="6">해산물</a></li><li><a href="#c8" data-i="7">해돋이</a></li><li><a href="#c9" data-i="8">이번 겨울 계획</a></li><li><a href="#c10" data-i="9">출처</a></li></ol>
+    <p class="keys"><kbd>↑</kbd> <kbd>↓</kbd> 또는 스크롤로 넘기기</p>
+  </aside>
+  <div class="frame">
+    <div class="bar" id="bar">
+      <div class="prog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="meta"><span id="count" aria-live="polite">1 / 10</span><a class="lang" href="./" lang="en" hreflang="en">English</a></div>
     </div>
-    <div class="plot"></div>
-    <figcaption>칸 색은 그 달 서울 평균기온입니다. 막대에 마우스를 올리면 날짜가 보입니다. 출처: 기상청 1991~2020 평년값, 서울시, 각 지자체 발표</figcaption>
-  </figure>
-</div>
-
-<main class="wrap">
-
-<section id="city">
-  <p class="kicker">12월 중순부터, 서울</p>
-  <h2>겨울에 가장 빨리 커진 곳은 도시입니다</h2>
-  <figure class="shot" data-scene="city"></figure>
-  <div class="split">
-    <div class="body">
-      <p>서울윈터페스타 방문객은 한 해 만에 <b>539만 명에서 1,098만 명</b>으로 두 배가 됐습니다. 광화문 크리스마스 마켓은 164만 명에서 357만 명, 청계천 빛초롱축제는 383만 명으로 전년보다 55% 늘었습니다. 이번 겨울 윈터페스타는 2026년 12월 11일부터 2027년 1월 31일까지로 올라와 있습니다.</p>
+    <main class="deck" id="deck" tabindex="-1">
+<section class="card cover" id="c1" data-i="0" aria-label="표지">
+  <img src="photos/hero-sm.jpg" srcset="photos/hero-sm.jpg 900w, photos/hero.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="겨울 설악산" fetchpriority="high" decoding="async" style="object-position:38% center"><a class="credit" href="https://commons.wikimedia.org/wiki/File:%EA%B2%A8%EC%9A%B8_%EC%84%A4%EC%95%85%EC%82%B0_%ED%92%8D%EA%B2%BD.jpg" target="_blank" rel="noopener">겨울 설악산. 사진: Sohyeon Bak, CC BY-SA 3.0</a>
+  <div class="cover-body">
+    <p class="big num">87<small>일</small></p>
+    <h1>한국의 겨울, 그 87일을 보내는 법</h1>
+    <p class="lead">12월 4일부터 2월 28일까지. 이야기 7개, 2분이면 됩니다.</p>
+    <ul class="topics"><li><a href="#c2">서울 빛축제</a></li><li><a href="#c3">얼음낚시</a></li><li><a href="#c4">설경</a></li><li><a href="#c5">스키</a></li><li><a href="#c6">온천</a></li><li><a href="#c7">해산물</a></li><li><a href="#c8">해돋이</a></li></ul>
+    <a class="start" href="#c2"><span class="m-only">위로 넘겨 시작</span><span class="d-only">시작</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></a>
+  </div>
+</section>
+<section class="card story k-city" id="c2" data-i="1" aria-label="서울 빛축제">
+  <div class="photo"><img src="photos/city-sm.jpg" srcset="photos/city-sm.jpg 900w, photos/city.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="청계천" fetchpriority="high" decoding="async" style="object-position:center 80%"><a class="credit" href="https://commons.wikimedia.org/wiki/File:Lantern_Festival_Boaters_at_Cheonggyecheon_Stream.jpg" target="_blank" rel="noopener">청계천. 사진: Ken Eckert, CC BY-SA 4.0</a></div>
+  <div class="panel">
+    <p class="when warm">12월 중순부터, 서울</p>
+    <h2>서울의 겨울 행사는 1년 새 두 배가 됐습니다</h2>
+    <p class="stat"><b class="num">1,098<small>만 명</small></b><span>서울윈터페스타 방문객, 전년의 두 배</span></p>
+    <p class="so"><strong>그래서</strong><span>12월 평일 저녁에 광화문에서 청계천까지 걸어보세요.</span></p>
+    <div class="foot">
+      <button class="more" type="button" data-sheet="s-city">숫자 보기</button>
+      <span class="next" aria-hidden="true"><span class="m-only">위로 넘기기</span><span class="d-only">다음</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></span>
     </div>
-    <figure id="ch-city">
-      <div class="legend" aria-hidden="true"><span><i style="background:var(--mute)"></i>2024~25 겨울</span><span><i style="background:var(--warm)"></i>2025~26 겨울</span></div>
-      <div class="plot"></div>
-      <figcaption>방문객 (만 명). 서울시 발표, 주최 측 집계</figcaption>
-    </figure>
   </div>
-  <p class="do"><b>그래서</b>사람이 몰리는 주말과 연말을 피해, 12월 평일 저녁에 광화문부터 청계천까지 걸어보세요.</p>
 </section>
-
-<section id="ice">
-  <p class="kicker">1월 중순부터 2월 초, 강원과 경북</p>
-  <h2>얼음 축제는 이제 날씨가 허락해야 열립니다</h2>
-  <figure class="shot" data-scene="ice"></figure>
-  <div class="split">
-    <div class="body">
-      <p>얼음낚시 축제는 강이 충분히 얼어야 열립니다. 인제 빙어축제는 <b>3년 연속</b> 열리지 못했고, 안동 암산얼음축제는 얼음 두께가 모자라 두 번 취소됐습니다. 평창 송어축제는 3년 내리 개막을 미뤘습니다. 그래도 열리면 사람은 몰립니다. 화천 산천어축제는 2025년 186만 명으로 역대 최다였습니다.</p>
+<section class="card story k-ice" id="c3" data-i="2" aria-label="얼음낚시">
+  <div class="photo"><img src="photos/ice-sm.jpg" srcset="photos/ice-sm.jpg 900w, photos/ice.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="화천" loading="lazy" decoding="async" style="object-position:center 85%"><a class="credit" href="https://commons.wikimedia.org/wiki/File:Hwacheon_Sancheoneo_Ice_Festival_01_(52620586388).jpg" target="_blank" rel="noopener">화천. 사진: Korea.net, CC BY-SA 2.0</a></div>
+  <div class="panel">
+    <p class="when">1월 중순부터 2월 초</p>
+    <h2>얼음 축제는 이제 날씨가 허락해야 열립니다</h2>
+    <p class="stat"><b class="num">186<small>만 명</small></b><span>화천 산천어축제 역대 최다, 2025년</span></p>
+    <p class="so"><strong>그래서</strong><span>1월 셋째 주 이후로 잡고, 전날 개장 공지를 확인하세요.</span></p>
+    <div class="foot">
+      <button class="more" type="button" data-sheet="s-ice">숫자 보기</button>
+      <span class="next" aria-hidden="true"><span class="m-only">위로 넘기기</span><span class="d-only">다음</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></span>
     </div>
-    <figure id="ch-hwacheon">
-      <div class="plot"></div>
-      <figcaption>화천 산천어축제 방문객 (만 명). 2020년은 두 번 연기돼 최종 집계 미확인, 2021~22년은 코로나19로 취소. 화천군 발표 보도 기준</figcaption>
-    </figure>
   </div>
-  <div class="scroll">
-    <table class="status" style="min-width:520px">
-      <thead><tr><th>축제</th><th>2024년</th><th>2025년</th><th>2026년</th></tr></thead>
-      <tbody>
-        <tr><td class="n">인제 빙어축제</td><td><span class="st off">무산</span></td><td><span class="st off">무산</span></td><td><span class="st off">무산</span></td></tr>
-        <tr><td class="n">안동 암산얼음축제</td><td><span class="st off">취소</span></td><td><span class="st na">확인 못 함</span></td><td><span class="st off">취소</span></td></tr>
-        <tr><td class="n">평창 송어축제</td><td><span class="st late">1주 연기</span></td><td><span class="st late">1주 연기</span></td><td><span class="st late">8일 연기</span></td></tr>
-        <tr><td class="n">화천 산천어축제</td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td></tr>
-        <tr><td class="n">홍천강 꽁꽁축제</td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="do"><b>그래서</b>얼음 축제는 1월 셋째 주 이후로 잡고, 출발 전날 공식 공지에서 개장 여부를 확인하세요.</p>
 </section>
-
-<section id="cold">
-  <p class="kicker">가장 추운 1월</p>
-  <h2>같은 1월이라도 대관령과 제주는 16도 차이가 납니다</h2>
-  <figure class="shot" data-scene="cold"></figure>
-  <div class="split">
-    <div class="body">
-      <p>1월은 전국 평균기온이 -0.6도로 1년 중 가장 춥습니다. 그런데 지역 차이가 큽니다. 1월 아침 평균 최저기온이 대관령은 -12.2도, 제주는 3.7도입니다. 눈을 보고 싶다면 대관령, 걷기 좋은 겨울을 원하면 강릉과 제주가 맞습니다. 1월 눈 온 날은 대관령 13일, 서울 7.1일입니다.</p>
+<section class="card story k-cold" id="c4" data-i="3" aria-label="설경">
+  <div class="photo"><img src="photos/cold-sm.jpg" srcset="photos/cold-sm.jpg 900w, photos/cold.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="대관령" loading="lazy" decoding="async" style="object-position:center 90%"><a class="credit" href="https://commons.wikimedia.org/wiki/File:Samyang_Ranch_(129281505).jpeg" target="_blank" rel="noopener">대관령. 사진: Yong Lee, CC BY 3.0</a></div>
+  <div class="panel">
+    <p class="when">가장 추운 1월</p>
+    <h2>같은 1월, 대관령과 제주는 16도 차이</h2>
+    <p class="stat"><b class="num">16<small>도</small></b><span>1월 최저기온, 대관령 -12.2도와 제주 3.7도</span></p>
+    <p class="so"><strong>그래서</strong><span>눈 구경은 대관령, 바다 산책은 강릉이나 제주로 가세요.</span></p>
+    <div class="foot">
+      <button class="more" type="button" data-sheet="s-cold">숫자 보기</button>
+      <span class="next" aria-hidden="true"><span class="m-only">위로 넘기기</span><span class="d-only">다음</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></span>
     </div>
-    <figure id="ch-cold">
-      <div class="plot"></div>
-      <figcaption>1월 평균 최저기온 (도). 기상청 1991~2020 평년값. 대관령 값은 기상청을 인용한 2차 자료</figcaption>
-    </figure>
   </div>
-  <p class="do"><b>그래서</b>1월 여행은 목적부터 정하세요. 눈 구경이면 대관령으로, 바다 산책이면 강릉이나 제주로 가면 됩니다.</p>
 </section>
-
-<section id="ski">
-  <p class="kicker">11월 말 개장부터</p>
-  <h2>스키 인구는 돌아오는 중이고, 스키장은 줄었습니다</h2>
-  <figure class="shot" data-scene="ski"></figure>
-  <div class="split">
-    <div class="body">
-      <p>스키장 이용객은 2011/12 시즌 686만 명이 정점이었고, 코로나19 시즌에 146만 명까지 떨어졌다가 2023/24 시즌 443만 명으로 회복했습니다. 그 사이 전국 스키장은 17곳에서 13곳으로 줄었습니다. 이번 시즌 개장일을 확정한 곳은 아직 없고, 용평이 11월 말을 목표로 한다는 보도만 있습니다.</p>
+<section class="card story k-ski" id="c5" data-i="4" aria-label="스키">
+  <div class="photo"><img src="photos/ski-sm.jpg" srcset="photos/ski-sm.jpg 900w, photos/ski.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="용평" loading="lazy" decoding="async" style="object-position:center 45%"><a class="credit" href="https://commons.wikimedia.org/wiki/File:Ski_slopes_of_YongPyong_Resort,_2013-03-10.jpg" target="_blank" rel="noopener">용평. 사진: Kalatpadai, CC0</a></div>
+  <div class="panel">
+    <p class="when">11월 말 개장부터</p>
+    <h2>스키 인구는 돌아오고, 스키장은 줄었습니다</h2>
+    <p class="stat"><b class="num">443<small>만 명</small></b><span>2023/24 시즌 이용객, 코로나 때 146만 명에서 회복</span></p>
+    <p class="so"><strong>그래서</strong><span>큰 스키장은 11월 말에서 12월 초에 엽니다. 시즌권은 개장 발표 전에 사세요.</span></p>
+    <div class="foot">
+      <button class="more" type="button" data-sheet="s-ski">숫자 보기</button>
+      <span class="next" aria-hidden="true"><span class="m-only">위로 넘기기</span><span class="d-only">다음</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></span>
     </div>
-    <figure id="ch-ski">
-      <div class="plot"></div>
-      <figcaption>시즌별 스키장 이용객 (만 명). 한국스키장경영협회 집계를 인용한 보도. 빈 시즌은 공개 수치 없음</figcaption>
-    </figure>
   </div>
-  <p class="do"><b>그래서</b>지난 시즌 기준으로 큰 스키장은 11월 말부터 12월 초 사이에 열었습니다. 시즌권은 개장 발표 전 할인 기간에 사세요.</p>
 </section>
-
-<section id="warm">
-  <p class="kicker">한파가 온 날</p>
-  <h2>1월에는 온천을 찾는 사람이 가장 크게 늘었습니다</h2>
-  <figure class="shot" data-scene="warm"></figure>
-  <div class="split">
-    <div class="body">
-      <p>2026년 1월 내비게이션 목적지 검색에서 온천은 전년보다 <b>246%</b> 늘어, 박물관이나 전통시장보다 증가 폭이 컸습니다. 전국 온천 이용객은 2025년 6,020만 명으로 코로나19 이전 수준을 되찾았습니다. 이용객이 가장 많은 곳은 온양온천이고, 시도별로는 경북이 22.5%로 1위입니다.</p>
+<section class="card story k-warm" id="c6" data-i="5" aria-label="온천">
+  <div class="photo"><img src="photos/warm-sm.jpg" srcset="photos/warm-sm.jpg 900w, photos/warm.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="대전 유성온천" loading="lazy" decoding="async" style="object-position:center 65%"><a class="credit" href="https://commons.wikimedia.org/wiki/File:People_take_a_foot_bath_at_an_outdoor_public_hot_spring_in_Yuseong-gu,_Daejeon,_Korea.jpg" target="_blank" rel="noopener">대전 유성온천. 사진: Pmlydon, CC BY-SA 4.0</a></div>
+  <div class="panel">
+    <p class="when warm">한파가 온 날</p>
+    <h2>추운 1월, 온천 검색이 가장 크게 늘었습니다</h2>
+    <p class="stat"><b class="num">+246<small>%</small></b><span>2026년 1월 온천 목적지 검색, 전년 대비</span></p>
+    <p class="so"><strong>그래서</strong><span>얼음 축제 날 한파 예보가 있으면 근처 온천으로 바꾸세요.</span></p>
+    <div class="foot">
+      <button class="more" type="button" data-sheet="s-warm">숫자 보기</button>
+      <span class="next" aria-hidden="true"><span class="m-only">위로 넘기기</span><span class="d-only">다음</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></span>
     </div>
-    <figure id="ch-warm">
-      <div class="plot"></div>
-      <figcaption>2026년 1월 1~25일 목적지 검색 증가율 (전년 같은 기간 대비, %). 티맵 발표 보도</figcaption>
-    </figure>
   </div>
-  <p class="do"><b>그래서</b>얼음 축제를 보러 강원에 간다면, 한파 예보가 있는 날은 일정을 바꿔 근처 온천으로 가세요.</p>
 </section>
-
-<section id="sea">
-  <p class="kicker">11월부터 3월까지, 바닷가</p>
-  <h2>겨울 바다의 제철은 그대로인데, 잡히는 곳이 바뀌고 있습니다</h2>
-  <figure class="shot" data-scene="sea"></figure>
-  <div class="figs">
-    <div class="fig"><span class="v num">3,404<span>t →</span>6,137</span><span class="l">강원 동해안 방어 어획량</span><span class="s">2021년에서 2022년, 80% 증가. 오징어를 제치고 1위. 강원 바다 수온은 최근 5년 평균이 그 전보다 1.1도 높습니다.</span></div>
-    <div class="fig"><span class="v num">3,261<span>t</span></span><span class="l">포항 과메기 생산량</span><span class="s">2025~26 시즌 잠정치, 전 시즌보다 53% 증가. 최대는 2013~14 시즌 5,770t.</span></div>
-    <div class="fig"><span class="v num">26<span>t</span></span><span class="l">벌교 참꼬막 생산량</span><span class="s">2025년. 1990년대에는 해마다 2만t 수준이었습니다.</span></div>
-  </div>
-  <div class="scroll">
-    <table class="food" style="min-width:560px">
-      <thead><tr><th>음식</th><th>11월</th><th>12월</th><th>1월</th><th>2월</th><th>3월</th><th>어디서</th></tr></thead>
-      <tbody>
-        <tr><td class="name">방어</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>제주 모슬포, 부산 자갈치, 최근 강원 고성</td></tr>
-        <tr><td class="name">굴</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>경남 통영 (전국 양식 면적의 70%)</td></tr>
-        <tr><td class="name">과메기</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>포항 구룡포</td></tr>
-        <tr><td class="name">대게</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>영덕 강구, 울진 후포 (5월까지)</td></tr>
-        <tr><td class="name">꼬막</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>보성 벌교</td></tr>
-        <tr><td class="name">딸기</td><td><i class="m"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>충남 논산 등 (본격 출하 12월부터)</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="do"><b>그래서</b>12월에 통영 굴과 구룡포 과메기를, 1월에 방어를 드세요. 방어는 지난겨울 도매가가 1년 사이 156% 올랐으니 가격을 확인하고 가세요.</p>
-</section>
-
-<section id="sunrise">
-  <p class="kicker">1월 1일 아침</p>
-  <h2>새해 첫 해는 동해로, 사람은 강릉에 가장 많이 모입니다</h2>
-  <figure class="shot" data-scene="sunrise"></figure>
-  <div class="split">
-    <div class="body">
-      <p>2026년 1월 1일 강릉에만 30만 명이 해를 보러 왔습니다. 경포 13만, 정동진 11만, 안목 등 6만 명입니다. 해는 독도에서 7시 26분, 내륙에서는 울산 간절곶에서 7시 31분에 가장 먼저 떴고, 서울은 7시 47분이었습니다. 2027년 일출 시각은 한국천문연구원이 12월에 발표합니다.</p>
+<section class="card story k-sea" id="c7" data-i="6" aria-label="해산물">
+  <div class="photo"><img src="photos/sea-sm.jpg" srcset="photos/sea-sm.jpg 900w, photos/sea.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="생선회" loading="lazy" decoding="async" style="object-position:center 50%"><a class="credit" href="https://commons.wikimedia.org/wiki/File:Korean_cuisine-Saengseon_hoe-02.jpg" target="_blank" rel="noopener">생선회. 사진: suksim, CC BY 2.0</a></div>
+  <div class="panel">
+    <p class="when">11월부터 3월까지, 바닷가</p>
+    <h2>제철일 때 이 셋은 꼭 드세요</h2>
+    <ul class="eat"><li><b>굴</b><span><strong>12월</strong>경남 통영</span></li><li><b>과메기</b><span><strong>12월</strong>포항 구룡포</span></li><li><b>방어</b><span><strong>1월</strong>제주, 부산, 강원 고성</span></li></ul>
+    <p class="so"><strong>그래서</strong><span>방어는 1년 새 156% 올랐습니다. 가격부터 확인하세요.</span></p>
+    <div class="foot">
+      <button class="more" type="button" data-sheet="s-sea">숫자 보기</button>
+      <span class="next" aria-hidden="true"><span class="m-only">위로 넘기기</span><span class="d-only">다음</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></span>
     </div>
-    <figure id="ch-sun">
-      <div class="plot"></div>
-      <figcaption>2026년 1월 1일 해맞이 인파 (만 명). 각 지자체 추산. 간절곶은 '10만 명 이상'</figcaption>
-    </figure>
   </div>
-  <p class="do"><b>그래서</b>사람이 덜한 해돋이를 원하면 강릉에서는 경포보다 안목을, 제주라면 성산일출봉(약 2만 명)을 고르세요.</p>
 </section>
-
-<section id="plan">
-  <p class="kicker">한 장 요약</p>
-  <h2>이번 겨울은 이 순서로 보내면 됩니다</h2>
-  <ol class="plan">
-    <li><span class="when">12월 중순</span><span class="what">광화문과 청계천 겨울 행사, 통영 굴과 과메기</span><span class="why">윈터페스타 12월 11일 시작. 평일 저녁이 한산합니다.</span></li>
-    <li><span class="when">12월 31일 ~ 1월 1일</span><span class="what">보신각 제야의 종, 또는 동해 해돋이</span><span class="why">강릉 30만 명. 안목과 성산이 상대적으로 한산합니다.</span></li>
-    <li><span class="when">1월 중순 ~ 2월 초</span><span class="what">얼음낚시 축제, 추운 날은 온천</span><span class="why">가장 추운 시기. 출발 전 개장 공지를 확인하세요.</span></li>
-    <li><span class="when">2월</span><span class="what">대관령 눈꽃축제, 스키 시즌 막바지, 딸기</span><span class="why">작년 대관령 눈꽃축제는 2월 13~22일, 역대 최다 입장.</span></li>
-  </ol>
+<section class="card story k-sunrise" id="c8" data-i="7" aria-label="해돋이">
+  <div class="photo"><img src="photos/sunrise-sm.jpg" srcset="photos/sunrise-sm.jpg 900w, photos/sunrise.jpg 1600w" sizes="(max-width: 600px) 100vw, 420px" alt="정동진" loading="lazy" decoding="async" style="object-position:center 60%"><a class="credit" href="https://commons.wikimedia.org/wiki/File:Jeongdongjin_Beach.jpg" target="_blank" rel="noopener">정동진. 사진: Loewelad, CC BY-SA 3.0</a></div>
+  <div class="panel">
+    <p class="when warm">1월 1일 아침</p>
+    <h2>새해 첫 해는 동해에서, 사람은 강릉에 가장 많이</h2>
+    <p class="stat"><b class="num">30<small>만 명</small></b><span>2026년 1월 1일 강릉 해맞이 인파</span></p>
+    <p class="so"><strong>그래서</strong><span>한산한 해돋이는 경포 대신 안목, 제주라면 성산일출봉으로 가세요.</span></p>
+    <div class="foot">
+      <button class="more" type="button" data-sheet="s-sunrise">숫자 보기</button>
+      <span class="next" aria-hidden="true"><span class="m-only">위로 넘기기</span><span class="d-only">다음</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></span>
+    </div>
+  </div>
 </section>
-
-</main>
-
-<footer class="wrap">
+<section class="card plain plan" id="c9" data-i="8" aria-label="이번 겨울 계획">
+  <p class="kick">이번 겨울, 순서대로</p>
+  <h2>12월부터 2월까지, 네 번의 겨울</h2>
+  <ol class="steps"><li class="w"><b>12월 중순</b><p>평일 저녁에 서울 겨울 행사를 보고, 통영 굴과 과메기를 드세요.</p></li><li class="w"><b>12월 31일 ~ 1월 1일</b><p>보신각 제야의 종, 또는 안목에서 새해 첫 해.</p></li><li class="c"><b>1월 중순 ~ 2월 초</b><p>얼음낚시 축제. 가장 추운 날은 온천으로.</p></li><li class="c"><b>2월</b><p>대관령 눈꽃축제, 스키 시즌 막바지, 딸기.</p></li></ol>
+  <div class="acts"><button class="more" type="button" data-sheet="s-plan">전체 달력</button><button class="pri" type="button" id="share">공유하기</button></div>
+</section>
+<section class="card plain sources-card" id="c10" data-i="9" aria-label="출처">
+  <p class="kick">출처와 사진</p>
+  <h2>숫자는 여기서 가져왔습니다</h2>
+  <div class="src-scroll">
   <p>숫자는 공공기관 발표와 언론 보도에서 가져왔고, 축제 방문객은 모두 주최 측 집계입니다. 2027년 지방 축제 일정과 스키장 개장일은 발표되는 대로 바뀔 수 있습니다.</p>
   <ul class="sources">
     <li><a href="https://www.kma.go.kr/kma/flexer/html/press/2021/03/25/ATC202103250932093_863521e7-fd31-4f26-bfce-04a9e14ffb33.hwp.files/Sections1.html" target="_blank" rel="noopener">기상청 신평년값 (1991~2020)</a></li>
@@ -362,8 +409,136 @@ footer{padding-block:24px 56px;font-size:13px;color:var(--ink-2);border-top:1px 
     <li><a href="https://commons.wikimedia.org/wiki/File:Korean_cuisine-Saengseon_hoe-02.jpg" target="_blank" rel="noopener">생선회</a>, suksim, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a></li>
     <li><a href="https://commons.wikimedia.org/wiki/File:Jeongdongjin_Beach.jpg" target="_blank" rel="noopener">정동진 해변</a>, Loewelad, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
   </ul>
-</footer>
-
+</div>
+  <div class="acts"><a class="more" href="#c1">처음으로</a><a class="more" href="long-ko.html">긴 페이지로 한 번에 보기</a></div>
+</section>
+    </main>
+  </div>
+  <div class="nav">
+    <button type="button" id="prev" aria-label="이전 카드"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+    <button type="button" id="next" aria-label="다음 카드"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  </div>
+</div>
+<dialog class="sheet" id="s-city" aria-labelledby="s-city-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-city-t">서울 겨울 행사 방문객 (만 명)</h3>
+    <figure id="ch-city">
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--mute)"></i>2024~25 겨울</span><span><i style="background:var(--warm)"></i>2025~26 겨울</span></div>
+      <div class="plot"></div>
+      <figcaption>방문객 (만 명). 서울시 발표, 주최 측 집계</figcaption>
+    </figure>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<dialog class="sheet" id="s-ice" aria-labelledby="s-ice-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-ice-t">얼음 축제, 해마다</h3>
+    <figure id="ch-hwacheon">
+      <div class="plot"></div>
+      <figcaption>화천 산천어축제 방문객 (만 명). 2020년은 두 번 연기돼 최종 집계 미확인, 2021~22년은 코로나19로 취소. 화천군 발표 보도 기준</figcaption>
+    </figure><div class="scroll">
+    <table class="status" style="min-width:520px">
+      <thead><tr><th>축제</th><th>2024년</th><th>2025년</th><th>2026년</th></tr></thead>
+      <tbody>
+        <tr><td class="n">인제 빙어축제</td><td><span class="st off">무산</span></td><td><span class="st off">무산</span></td><td><span class="st off">무산</span></td></tr>
+        <tr><td class="n">안동 암산얼음축제</td><td><span class="st off">취소</span></td><td><span class="st na">확인 못 함</span></td><td><span class="st off">취소</span></td></tr>
+        <tr><td class="n">평창 송어축제</td><td><span class="st late">1주 연기</span></td><td><span class="st late">1주 연기</span></td><td><span class="st late">8일 연기</span></td></tr>
+        <tr><td class="n">화천 산천어축제</td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td></tr>
+        <tr><td class="n">홍천강 꽁꽁축제</td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td><td><span class="st ok">정상</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<dialog class="sheet" id="s-cold" aria-labelledby="s-cold-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-cold-t">1월 평균 최저기온</h3>
+    <figure id="ch-cold">
+      <div class="plot"></div>
+      <figcaption>1월 평균 최저기온 (도). 기상청 1991~2020 평년값. 대관령 값은 기상청을 인용한 2차 자료</figcaption>
+    </figure><p class="note">1월 눈 온 날: 대관령 13일, 서울 7.1일.</p>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<dialog class="sheet" id="s-ski" aria-labelledby="s-ski-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-ski-t">시즌별 스키장 이용객 (만 명)</h3>
+    <figure id="ch-ski">
+      <div class="plot"></div>
+      <figcaption>시즌별 스키장 이용객 (만 명). 한국스키장경영협회 집계를 인용한 보도. 빈 시즌은 공개 수치 없음</figcaption>
+    </figure>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<dialog class="sheet" id="s-warm" aria-labelledby="s-warm-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-warm-t">1월 목적지 검색 증가율</h3>
+    <figure id="ch-warm">
+      <div class="plot"></div>
+      <figcaption>2026년 1월 1~25일 목적지 검색 증가율 (전년 같은 기간 대비, %). 티맵 발표 보도</figcaption>
+    </figure>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<dialog class="sheet" id="s-sea" aria-labelledby="s-sea-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-sea-t">겨울 바다, 숫자로 보기</h3>
+    <div class="figs">
+    <div class="fig"><span class="v num">3,404<span>t →</span>6,137</span><span class="l">강원 동해안 방어 어획량</span><span class="s">2021년에서 2022년, 80% 증가. 오징어를 제치고 1위. 강원 바다 수온은 최근 5년 평균이 그 전보다 1.1도 높습니다.</span></div>
+    <div class="fig"><span class="v num">3,261<span>t</span></span><span class="l">포항 과메기 생산량</span><span class="s">2025~26 시즌 잠정치, 전 시즌보다 53% 증가. 최대는 2013~14 시즌 5,770t.</span></div>
+    <div class="fig"><span class="v num">26<span>t</span></span><span class="l">벌교 참꼬막 생산량</span><span class="s">2025년. 1990년대에는 해마다 2만t 수준이었습니다.</span></div>
+  </div><div class="scroll">
+    <table class="food" style="min-width:560px">
+      <thead><tr><th>음식</th><th>11월</th><th>12월</th><th>1월</th><th>2월</th><th>3월</th><th>어디서</th></tr></thead>
+      <tbody>
+        <tr><td class="name">방어</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>제주 모슬포, 부산 자갈치, 최근 강원 고성</td></tr>
+        <tr><td class="name">굴</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>경남 통영 (전국 양식 면적의 70%)</td></tr>
+        <tr><td class="name">과메기</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>포항 구룡포</td></tr>
+        <tr><td class="name">대게</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>영덕 강구, 울진 후포 (5월까지)</td></tr>
+        <tr><td class="name">꼬막</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>보성 벌교</td></tr>
+        <tr><td class="name">딸기</td><td><i class="m"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>충남 논산 등 (본격 출하 12월부터)</td></tr>
+      </tbody>
+    </table>
+  </div>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<dialog class="sheet" id="s-sunrise" aria-labelledby="s-sunrise-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-sunrise-t">새해 해맞이 인파</h3>
+    <figure id="ch-sun">
+      <div class="plot"></div>
+      <figcaption>2026년 1월 1일 해맞이 인파 (만 명). 각 지자체 추산. 간절곶은 '10만 명 이상'</figcaption>
+    </figure>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<dialog class="sheet wide" id="s-plan" aria-labelledby="s-plan-t">
+  <div class="sheet-in">
+    <span class="grab" aria-hidden="true"></span>
+    <h3 id="s-plan-t">겨울 달력</h3>
+    <figure class="almanac" id="almanac">
+    <div class="alm-legend" aria-hidden="true">
+      <span><i class="key" style="background:var(--warm)"></i>도시 행사</span>
+      <span><i class="key" style="background:var(--cold)"></i>얼음과 눈 축제</span>
+      <span><i class="key" style="background:var(--mute)"></i>시즌</span>
+      <span><i class="key dash"></i>2026년 일정 (2027년 미발표)</span>
+    </div>
+    <div class="plot"></div>
+    <figcaption>칸 색은 그 달 서울 평균기온입니다. 막대에 마우스를 올리면 날짜가 보입니다. 출처: 기상청 1991~2020 평년값, 서울시, 각 지자체 발표</figcaption>
+  </figure>
+    <form method="dialog"><button class="close">카드로 돌아가기</button></form>
+  </div>
+</dialog>
+<p class="toast" id="toast" role="status" hidden>링크를 복사했습니다</p>
 <script>
 (function(){
   var NS = 'http://www.w3.org/2000/svg';
@@ -569,83 +744,72 @@ footer{padding-block:24px 56px;font-size:13px;color:var(--ink-2);border-top:1px 
   hbars('ch-warm', [{n:'온천', v:246.1, hl:true}, {n:'박물관', v:130.1}, {n:'전통시장', v:34.4}, {n:'공연장', v:26.4}], 0, 280, [0, 100, 200], function(v){ return v === 0 ? '0' : '+' + v + '%'; }, '1월 목적지 검색 증가율', function(r){ return r.hl ? 'var(--warm)' : 'var(--mute)'; });
   hbars('ch-sun', [{n:'강릉', v:30, hl:true, note:'경포 13, 정동진 11, 안목 등 6'}, {n:'울산 간절곶', v:10, note:'10만 명 이상'}, {n:'포항 호미곶', v:5}, {n:'제주 성산일출봉', v:2, note:'약 2만 명'}], 0, 34, [0, 10, 20, 30], function(v){ return v === 0 ? '0' : v + '만'; }, '2026년 새해 해맞이 인파', function(r){ return r.hl ? 'var(--warm)' : 'var(--mute)'; });
 })();
-
-/* ---------- scenes: illustrations until licensed photos arrive ---------- */
+/* ---------- deck: progress, counter, keyboard, arrows, sheets, share ---------- */
 (function(){
-  // Fill a key with {src, alt, credit} to replace the illustration with a photo.
-  // src is a path next to this file (photos/), an uploaded asset url, or a data: URI; credit names the photographer and the licence.
-  // pos is the object-position used when the 10:3 strip crops the photo; page links the credit to the source.
-  var PHOTOS = {
-    hero:    {src:'photos/hero.jpg', alt:'눈 덮인 겨울 설악산 능선', place:'겨울 설악산', credit:'Sohyeon Bak, CC BY-SA 3.0', page:'https://commons.wikimedia.org/wiki/File:%EA%B2%A8%EC%9A%B8_%EC%84%A4%EC%95%85%EC%82%B0_%ED%92%8D%EA%B2%BD.jpg', pos:'center 40%'},
-    city:    {src:'photos/city.jpg', alt:'밤의 청계천에 뜬 빛초롱 배 조형물과 구경하는 사람들', place:'청계천 서울빛초롱축제', credit:'Ken Eckert, CC BY-SA 4.0', page:'https://commons.wikimedia.org/wiki/File:Lantern_Festival_Boaters_at_Cheonggyecheon_Stream.jpg', pos:'center 80%'},
-    ice:     {src:'photos/ice.jpg', alt:'얼어붙은 강 위에서 얼음낚시를 하는 수많은 사람들', place:'화천 산천어축제 얼음낚시', credit:'Korea.net, CC BY-SA 2.0', page:'https://commons.wikimedia.org/wiki/File:Hwacheon_Sancheoneo_Ice_Festival_01_(52620586388).jpg', pos:'center 95%'},
-    cold:    {src:'photos/cold.jpg', alt:'눈 덮인 대관령 목장 언덕과 풍력발전기', place:'대관령 삼양목장 설경', credit:'Yong Lee, CC BY 3.0', page:'https://commons.wikimedia.org/wiki/File:Samyang_Ranch_(129281505).jpeg', pos:'center 100%'},
-    ski:     {src:'photos/ski.jpg', alt:'눈 덮인 용평리조트 슬로프와 리조트 건물', place:'용평리조트 슬로프', credit:'Kalatpadai, CC0', page:'https://commons.wikimedia.org/wiki/File:Ski_slopes_of_YongPyong_Resort,_2013-03-10.jpg', pos:'center 45%'},
-    warm:    {src:'photos/warm.jpg', alt:'야외 온천 족욕장에 발을 담그고 앉은 사람들', place:'대전 유성온천 노천 족욕장', credit:'Pmlydon, CC BY-SA 4.0', page:'https://commons.wikimedia.org/wiki/File:People_take_a_foot_bath_at_an_outdoor_public_hot_spring_in_Yuseong-gu,_Daejeon,_Korea.jpg', pos:'center 72%'},
-    sea:     {src:'photos/sea.jpg', alt:'접시에 둥글게 담긴 생선회', place:'생선회', credit:'suksim, CC BY 2.0', page:'https://commons.wikimedia.org/wiki/File:Korean_cuisine-Saengseon_hoe-02.jpg', pos:'center 50%'},
-    sunrise: {src:'photos/sunrise.jpg', alt:'해 뜨기 전 붉게 물든 정동진 해변과 사람들', place:'정동진 해변의 새벽', credit:'Loewelad, CC BY-SA 3.0', page:'https://commons.wikimedia.org/wiki/File:Jeongdongjin_Beach.jpg', pos:'center 55%'}
-  };
-  var NS = 'http://www.w3.org/2000/svg';
-  function el(t, a, p){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
-  function rng(seed){ return function(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
-  var W = 1600, H = 480;
-  function ridge(g, base, amp, f, ph, fill, op){
-    var pts = '0,' + H;
-    for (var x = 0; x <= W; x += 40){ var y = base - amp * (Math.sin(x * f + ph) * .6 + Math.sin(x * f * 2.3 + ph * 1.7) * .4); pts += ' ' + x + ',' + y.toFixed(1); }
-    pts += ' ' + W + ',' + H;
-    el('polygon', {points:pts, style:'fill:' + fill + ';fill-opacity:' + op}, g);
+  var deck = document.getElementById('deck'), cards = [].slice.call(deck.querySelectorAll('.card'));
+  var bar = document.getElementById('bar'), ticks = [].slice.call(bar.querySelectorAll('.prog i'));
+  var count = document.getElementById('count'), prev = document.getElementById('prev'), next = document.getElementById('next');
+  var toc = [].slice.call(document.querySelectorAll('.toc a')), n = cards.length, cur = -1;
+
+  function set(i){
+    if (i === cur) return; cur = i;
+    for (var k = 0; k < n; k++) ticks[k].classList.toggle('on', k <= i);
+    count.textContent = (i + 1) + ' / ' + n;
+    bar.classList.toggle('light', cards[i].classList.contains('plain'));
+    toc.forEach(function(a, k){ if (k === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    prev.disabled = i === 0; next.disabled = i === n - 1;
+    history.replaceState(null, '', i ? '#' + cards[i].id : location.pathname + location.search);
   }
-  function snow(g, n, seed, ymax){ var r = rng(seed); for (var i = 0; i < n; i++) el('circle', {cx:(r() * W).toFixed(0), cy:(r() * (ymax || H)).toFixed(0), r:(1.4 + r() * 2.6).toFixed(1), style:'fill:var(--paper);fill-opacity:.85'}, g); }
-  function wave(g, y, amp, len, color, op, w){ var d = 'M0 ' + y; for (var x = 0; x <= W; x += len) d += ' Q' + (x + len / 4) + ' ' + (y - amp) + ' ' + (x + len / 2) + ' ' + y + ' T' + (x + len) + ' ' + y; el('path', {d:d, style:'fill:none;stroke:' + color + ';stroke-opacity:' + op + ';stroke-width:' + (w || 3) + ';stroke-linecap:round'}, g); }
-  function bg(g, c){ el('rect', {x:0, y:0, width:W, height:H, style:'fill:' + c}, g); }
-  function label(g, x, y, big, small, anchor){
-    el('text', {x:x, y:y, 'text-anchor':anchor, style:'fill:var(--ink);font-family:var(--f-disp);font-weight:900;font-size:84px'}, g).textContent = big;
-    el('text', {x:x, y:y + 40, 'text-anchor':anchor, style:'fill:var(--ink-2);font-family:var(--f-body);font-size:26px;font-weight:500'}, g).textContent = small;
+  function go(i){
+    i = Math.max(0, Math.min(n - 1, i));
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    deck.scrollTo({top: cards[i].offsetTop, behavior: reduce ? 'auto' : 'smooth'});
   }
-  var scenes = {
-    hero: function(g){ bg(g, 'var(--cold-wash)'); el('circle', {cx:1250, cy:150, r:56, style:'fill:var(--warm);fill-opacity:.85'}, g);
-      ridge(g, 250, 60, .004, 1, 'var(--mute)', .55); ridge(g, 300, 70, .0032, 2.4, 'var(--cold)', .35); ridge(g, 360, 55, .005, 4, 'var(--cold)', .7); ridge(g, 420, 35, .006, .7, 'var(--ink)', .88); snow(g, 110, 7); },
-    city: function(g){ bg(g, 'var(--neutral)'); var r = rng(3);
-      for (var i = 0; i < 18; i++){ var bw = 60 + r() * 70, bh = 90 + r() * 170, bx = i * 92 - 20; el('rect', {x:bx, y:330 - bh, width:bw, height:bh + 10, style:'fill:var(--mute);fill-opacity:.45'}, g); }
-      el('rect', {x:0, y:330, width:W, height:150, style:'fill:var(--cold);fill-opacity:.22'}, g); wave(g, 380, 8, 120, 'var(--cold)', .6); wave(g, 430, 6, 90, 'var(--cold)', .4);
-      [[40, 120], [150, 150], [260, 120]].forEach(function(c, k){ var y0 = c[0], sag = c[1]; el('path', {d:'M0 ' + y0 + ' Q800 ' + (y0 + sag) + ' 1600 ' + y0, style:'fill:none;stroke:var(--axis);stroke-width:2'}, g);
-        for (var x = 60 + k * 30; x < W; x += 110){ var t = x / W, y = (1 - t) * (1 - t) * y0 + 2 * t * (1 - t) * (y0 + sag) + t * t * y0; el('circle', {cx:x, cy:y + 22, r:26, style:'fill:var(--warm-wash);fill-opacity:.9'}, g); el('circle', {cx:x, cy:y + 22, r:13, style:'fill:var(--warm);fill-opacity:' + (.55 + r() * .45).toFixed(2)}, g); } }); },
-    ice: function(g){ bg(g, 'var(--cold-wash)'); ridge(g, 170, 30, .005, 2, 'var(--cold)', .45); el('rect', {x:0, y:190, width:W, height:290, style:'fill:var(--paper)'}, g); var r = rng(11);
-      for (var row = 0; row < 5; row++){ var y = 215 + row * row * 12 + row * 30, s = .45 + row * .2; for (var i = 0; i < 9; i++){ var x = (i + r() * .6) * W / 9 + 30; el('ellipse', {cx:x, cy:y, rx:28 * s, ry:9 * s, style:'fill:var(--cold);fill-opacity:.75'}, g); if (r() > .55) el('rect', {x:x + 30 * s, y:y - 34 * s, width:10 * s, height:28 * s, rx:4 * s, style:'fill:var(--ink);fill-opacity:.8'}, g); } }
-      [[260, 'var(--warm)'], [700, 'var(--mute)'], [1180, 'var(--warm)']].forEach(function(t){ el('polygon', {points:(t[0] - 40) + ',205 ' + t[0] + ',150 ' + (t[0] + 40) + ',205', style:'fill:' + t[1]}, g); }); },
-    cold: function(g){ el('rect', {x:0, y:0, width:800, height:H, style:'fill:var(--cold-wash)'}, g); el('rect', {x:800, y:0, width:800, height:H, style:'fill:var(--neutral)'}, g);
-      var left = el('g', {}, g); ridge(left, 330, 90, .006, 1.3, 'var(--cold)', .55); ridge(left, 400, 50, .008, 3, 'var(--ink)', .85); el('rect', {x:800, y:0, width:800, height:H, style:'fill:var(--neutral)'}, g);
-      el('rect', {x:800, y:310, width:800, height:170, style:'fill:var(--cold);fill-opacity:.3'}, g); el('circle', {cx:1180, cy:235, r:54, style:'fill:var(--warm)'}, g); wave(g, 360, 6, 100, 'var(--paper)', .9); wave(g, 410, 5, 80, 'var(--paper)', .7);
-      snow(el('g', {}, g), 0, 1); var sg = el('g', {}, g); var r = rng(5); for (var i = 0; i < 60; i++) el('circle', {cx:(r() * 780).toFixed(0), cy:(r() * H).toFixed(0), r:(1.4 + r() * 2.4).toFixed(1), style:'fill:var(--paper);fill-opacity:.85'}, sg);
-      label(g, 60, 110, '-12.2°', '대관령 1월 최저', 'start'); label(g, 1540, 110, '3.7°', '제주 1월 최저', 'end'); },
-    ski: function(g){ bg(g, 'var(--cold-wash)'); el('polygon', {points:'0,480 0,250 1600,70 1600,480', style:'fill:var(--paper)'}, g); var r = rng(17);
-      for (var i = 0; i < 26; i++){ var x = 40 + i * 62, y = 250 - x * (180 / 1600) + 10 + r() * 40; el('polygon', {points:(x - 12) + ',' + (y + 30) + ' ' + x + ',' + (y - 6) + ' ' + (x + 12) + ',' + (y + 30), style:'fill:var(--ink);fill-opacity:.75'}, g); }
-      el('line', {x1:120, y1:440, x2:1520, y2:140, style:'stroke:var(--axis);stroke-width:3'}, g);
-      for (var t = .08; t < 1; t += .11){ var cx = 120 + t * 1400, cy = 440 - t * 300; el('line', {x1:cx, y1:cy, x2:cx, y2:cy + 26, style:'stroke:var(--axis);stroke-width:2'}, g); el('rect', {x:cx - 14, y:cy + 24, width:28, height:12, rx:3, style:'fill:var(--warm)'}, g); }
-      el('path', {d:'M1500 150 C1300 260 1100 230 900 330 S500 420 300 470', style:'fill:none;stroke:var(--mute);stroke-width:3'}, g); el('path', {d:'M1510 160 C1310 270 1110 240 910 340 S510 430 310 480', style:'fill:none;stroke:var(--mute);stroke-width:3'}, g); snow(g, 50, 9, 260); },
-    warm: function(g){ bg(g, 'var(--neutral)'); el('rect', {x:0, y:300, width:W, height:180, style:'fill:var(--paper)'}, g); el('ellipse', {cx:800, cy:360, rx:520, ry:95, style:'fill:var(--cold);fill-opacity:.35'}, g);
-      var r = rng(23); for (var i = 0; i < 16; i++){ var a = i / 16 * Math.PI * 2; el('circle', {cx:800 + Math.cos(a) * 540, cy:360 + Math.sin(a) * 105, r:(18 + r() * 22).toFixed(0), style:'fill:var(--mute)'}, g); }
-      for (var k = 0; k < 7; k++){ var x = 420 + k * 125, d = 'M' + x + ' 330'; for (var y = 330; y > 60; y -= 40) d += ' q' + (k % 2 ? 22 : -22) + ' -20 0 -40'; el('path', {d:d, style:'fill:none;stroke:var(--axis);stroke-width:9;stroke-linecap:round;stroke-opacity:.8'}, g); }
-      snow(g, 70, 31, 300); },
-    sea: function(g){ bg(g, 'var(--cold-wash)'); for (var i = 0; i < 7; i++) wave(g, 90 + i * 55, 10, 140 + i * 10, 'var(--cold)', .25 + i * .08, 3);
-      [[420, 230, 1], [820, 330, .8], [1180, 200, 1.15], [1340, 360, .7]].forEach(function(f){ var x = f[0], y = f[1], s = f[2];
-        el('path', {d:'M' + x + ' ' + y + ' q' + (90 * s) + ' ' + (-46 * s) + ' ' + (190 * s) + ' 0 q' + (-100 * s) + ' ' + (46 * s) + ' ' + (-190 * s) + ' 0 Z', style:'fill:var(--ink);fill-opacity:.82'}, g);
-        el('polygon', {points:(x + 186 * s) + ',' + y + ' ' + (x + 236 * s) + ',' + (y - 30 * s) + ' ' + (x + 224 * s) + ',' + y + ' ' + (x + 236 * s) + ',' + (y + 30 * s), style:'fill:var(--ink);fill-opacity:.82'}, g);
-        el('circle', {cx:x + 30 * s, cy:y - 6 * s, r:4 * s, style:'fill:var(--paper)'}, g); }); },
-    sunrise: function(g){ el('rect', {x:0, y:0, width:W, height:110, style:'fill:var(--neutral)'}, g); el('rect', {x:0, y:110, width:W, height:110, style:'fill:var(--warm-wash);fill-opacity:.6'}, g); el('rect', {x:0, y:220, width:W, height:90, style:'fill:var(--warm-wash)'}, g);
-      el('path', {d:'M690 310 A110 110 0 0 1 910 310 Z', style:'fill:var(--warm)'}, g); el('rect', {x:0, y:310, width:W, height:170, style:'fill:var(--cold);fill-opacity:.32'}, g); el('line', {x1:0, y1:310, x2:W, y2:310, style:'stroke:var(--ink);stroke-opacity:.35;stroke-width:2'}, g);
-      [[180, 335], [140, 365], [100, 395], [70, 425], [44, 455]].forEach(function(l){ el('line', {x1:800 - l[0], y1:l[1], x2:800 + l[0], y2:l[1], style:'stroke:var(--warm);stroke-opacity:.7;stroke-width:6;stroke-linecap:round'}, g); }); }
-  };
-  var CAP = {hero:'눈 덮인 산 능선', city:'청계천 빛초롱', ice:'얼음낚시 축제', cold:'대관령과 제주', ski:'스키장 슬로프', warm:'눈 속 노천 온천', sea:'겨울 바다의 방어', sunrise:'동해 해돋이'};
-  document.querySelectorAll('.shot[data-scene]').forEach(function(fig){
-    var key = fig.getAttribute('data-scene'), ph = PHOTOS[key], cr = document.createElement('figcaption'); cr.className = 'credit';
-    if (ph && ph.src){
-      var img = document.createElement('img'); img.src = ph.src; img.alt = ph.alt || CAP[key]; if (key !== 'hero') img.loading = 'lazy'; if (ph.pos) img.style.objectPosition = ph.pos; fig.appendChild(img);
-      var label = (ph.place || CAP[key]) + '. 사진: ' + (ph.credit || '');
-      if (ph.page){ var a = document.createElement('a'); a.href = ph.page; a.target = '_blank'; a.rel = 'noopener'; a.textContent = label; cr.appendChild(a); } else cr.textContent = label;
-    }
-    else { var svg = el('svg', {viewBox:'0 0 ' + W + ' ' + H, preserveAspectRatio:'xMidYMid slice', role:'img', 'aria-label':'그림: ' + CAP[key]}); scenes[key](el('g', {}, svg)); fig.appendChild(svg); cr.textContent = '그림: ' + CAP[key]; }
-    fig.appendChild(cr);
+
+  // the card filling most of the deck is the current one
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) set(+e.target.getAttribute('data-i')); });
+  }, {root: deck, threshold: 0.6});
+  cards.forEach(function(c){ io.observe(c); });
+
+  prev.addEventListener('click', function(){ go(cur - 1); });
+  next.addEventListener('click', function(){ go(cur + 1); });
+  document.addEventListener('keydown', function(e){
+    if (document.querySelector('dialog[open]') || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'ArrowDown' || e.key === 'PageDown' || (e.key === ' ' && !e.shiftKey)){ e.preventDefault(); go(cur + 1); }
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp' || (e.key === ' ' && e.shiftKey)){ e.preventDefault(); go(cur - 1); }
+    else if (e.key === 'Home'){ e.preventDefault(); go(0); }
+    else if (e.key === 'End'){ e.preventDefault(); go(n - 1); }
   });
+  // in-page links (#c3) move the deck instead of jumping the window
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#c"]'); if (!a) return;
+    var t = document.getElementById(a.getAttribute('href').slice(1)); if (!t || !t.classList.contains('card')) return;
+    e.preventDefault(); go(+t.getAttribute('data-i'));
+  });
+
+  // bottom sheets; the backdrop closes them
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-sheet]');
+    if (b){ var d = document.getElementById(b.getAttribute('data-sheet')); d.showModal(); d.querySelector('.sheet-in').scrollTop = 0; return; }
+    if (e.target.tagName === 'DIALOG') e.target.close();
+  });
+
+  var share = document.getElementById('share'), toast = document.getElementById('toast'), tt;
+  share.addEventListener('click', function(){
+    var url = location.origin + location.pathname;
+    if (navigator.share) { navigator.share({title: document.title, url: url}).catch(function(){}); return; }
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function(){
+      toast.hidden = false; clearTimeout(tt); tt = setTimeout(function(){ toast.hidden = true; }, 1800);
+    }, function(){ prompt('', url); });
+  });
+
+  var start = location.hash && document.getElementById(location.hash.slice(1));
+  if (start && start.classList.contains('card')) deck.scrollTop = start.offsetTop;
+  set(start && start.classList.contains('card') ? +start.getAttribute('data-i') : 0);
+  deck.focus({preventScroll: true});
 })();
+
 </script>
+</body>
+</html>
