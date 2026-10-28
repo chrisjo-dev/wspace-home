@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>87 Days of Korean Winter</title>
+<meta name="description" content="When, where and what to do in a Korean winter: festivals, ski season, hot springs, winter seafood and the first sunrise, backed by data.">
+<link rel="canonical" href="https://www.wspace.ai.kr/korea-winter/">
+<link rel="alternate" hreflang="en" href="https://www.wspace.ai.kr/korea-winter/">
+<link rel="alternate" hreflang="ko" href="https://www.wspace.ai.kr/korea-winter/ko.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="87 Days of Korean Winter">
+<meta property="og:description" content="When, where and what to do in a Korean winter: festivals, ski season, hot springs, winter seafood and the first sunrise, backed by data.">
+<meta property="og:url" content="https://www.wspace.ai.kr/korea-winter/">
+<meta property="og:image" content="https://www.wspace.ai.kr/korea-winter/photos/hero.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-43L9WRDB2N"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-43L9WRDB2N',{anonymize_ip:true});</script>
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700;900&family=Gothic+A1:wght@400;500;700&display=swap">
+<style>
+/* Layout: an almanac. One big number (87 days) opens, then a Dec–Feb calendar is the spine; every later section answers "when / where / why now" with one chart and one line of advice. Left-aligned, single reading column, charts allowed wider. Cold blue = ice and snow, camellia red = city and warmth. */
+:root{
+  --snow:#F7F9FB; --paper:#FFFFFF; --ink:#172033; --ink-2:#4A5568; --hair:#DDE3EA;
+  --cold:#2F72C4; --warm:#C8333F; --cold-wash:#E4EDF8; --warm-wash:#F9E7E9;
+  --grid:#E5EAF0; --axis:#BFC8D3; --mute:#B7C0CC; --neutral:#EEF1F5;
+  --ok:#1E6E45; --ok-bg:#E2F1E8; --late:#8A5A00; --late-bg:#FBF0D9; --off:#A12B33; --off-bg:#F8E1E3;
+  --f-disp:"Hahmlet","Nanum Myeongjo","AppleMyungjo",serif;
+  --f-body:"Gothic A1","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --snow:#0F1524; --paper:#141B2B; --ink:#E8ECF3; --ink-2:#A8B3C4; --hair:#263049;
+  --cold:#4F8FD8; --warm:#E0565F; --cold-wash:#18263F; --warm-wash:#3A1B22;
+  --grid:#1F2840; --axis:#34405A; --mute:#4A5670; --neutral:#222B40;
+  --ok:#73C99A; --ok-bg:#12301F; --late:#E5B75F; --late-bg:#372A10; --off:#EE8C8F; --off-bg:#3A1A1E; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --snow:#0F1524; --paper:#141B2B; --ink:#E8ECF3; --ink-2:#A8B3C4; --hair:#263049;
+  --cold:#4F8FD8; --warm:#E0565F; --cold-wash:#18263F; --warm-wash:#3A1B22;
+  --grid:#1F2840; --axis:#34405A; --mute:#4A5670; --neutral:#222B40;
+  --ok:#73C99A; --ok-bg:#12301F; --late:#E5B75F; --late-bg:#372A10; --off:#EE8C8F; --off-bg:#3A1A1E; color-scheme:dark;}
+*{box-sizing:border-box}
+body{background:var(--snow);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;overflow-wrap:break-word}
+a{color:var(--cold);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--cold);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-disp);margin:0;text-wrap:balance;line-height:1.3}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+
+/* hero */
+.hero{padding-block:56px 24px;display:grid;grid-template-columns:auto 1fr;gap:12px 40px;align-items:end}
+.big{font-family:var(--f-disp);font-weight:900;font-size:clamp(120px,22vw,250px);line-height:.8;letter-spacing:-.04em;color:var(--ink);display:flex;align-items:flex-start}
+.big small{font-size:.2em;font-weight:700;letter-spacing:0;margin-top:.12em;margin-left:.06em}
+.hero h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;max-width:22ch}
+.hero .lead{grid-column:1 / -1;font-size:17px;color:var(--ink-2);max-width:62ch;margin-top:12px}
+.asof{grid-column:1 / -1;font-size:13px;color:var(--ink-2)}
+
+/* almanac */
+.almanac{margin-top:8px;background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:18px 18px 12px;position:relative}
+.alm-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--ink-2);margin-bottom:8px}
+.alm-legend span{display:inline-flex;align-items:center;gap:7px}
+.key{width:18px;height:8px;border-radius:3px;display:inline-block}
+.key.dash{background:transparent;border:1.5px dashed var(--ink-2);height:10px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll svg{display:block;width:100%}
+.almanac .plot{overflow:visible}
+svg text{font-family:var(--f-body)}
+.hit{cursor:default}
+@media (prefers-reduced-motion:no-preference){
+  .grow{transform-box:fill-box;transform-origin:left center;animation:grow .7s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--snow);border-radius:8px;padding:8px 11px;font-size:13px;line-height:1.45;max-width:260px;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.tip strong{display:block;font-size:14px}
+details.tv{font-size:13.5px;margin-top:6px}
+details.tv summary{cursor:pointer;color:var(--ink-2);width:max-content}
+details.tv table{border-collapse:collapse;margin-top:8px;font-size:13.5px;width:100%}
+details.tv th,details.tv td{border-top:1px solid var(--hair);padding:6px 10px;text-align:left}
+details.tv td+td{font-variant-numeric:tabular-nums}
+
+/* sections */
+main{display:grid;gap:88px;padding-block:72px 40px}
+section{display:grid;gap:18px;min-width:0;scroll-margin-top:24px}
+.kicker{font-size:14px;color:var(--ink-2);font-weight:500}
+h2{font-size:clamp(26px,3.2vw,34px);font-weight:700;max-width:24ch}
+.body{max-width:62ch;color:var(--ink)}
+.body b{font-weight:700}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start}
+.split > *{min-width:0}
+figure{margin:0;display:grid;gap:8px;min-width:0;position:relative}
+figcaption{font-size:13px;color:var(--ink-2)}
+.plot{position:relative;min-width:0}
+.plot svg{display:block;width:100%;overflow:visible}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.do{font-size:15.5px;border-top:2px solid var(--ink);padding-top:12px;max-width:62ch}
+.do b{font-family:var(--f-disp);font-weight:700;margin-right:8px}
+
+/* status grid */
+.status{border-collapse:separate;border-spacing:0;width:100%;font-size:14px}
+.status th,.status td{padding:9px 10px;border-bottom:1px solid var(--hair);text-align:left;vertical-align:middle}
+.status thead th{font-size:12.5px;color:var(--ink-2);font-weight:500}
+.status td.n{font-weight:700}
+.st{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.st.ok{background:var(--ok-bg);color:var(--ok)}
+.st.late{background:var(--late-bg);color:var(--late)}
+.st.off{background:var(--off-bg);color:var(--off)}
+.st.na{color:var(--ink-2);font-weight:500;padding-left:0}
+
+/* figures */
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.fig{display:grid;gap:4px;align-content:start;border-top:1px solid var(--hair);padding-top:14px}
+.fig .v{font-family:var(--f-disp);font-weight:900;font-size:clamp(34px,4.4vw,48px);line-height:1.05}
+.fig .v span{font-size:.45em;font-weight:700;margin:0 .15em}
+.fig .l{font-size:14.5px;font-weight:700}
+.fig .s{font-size:13px;color:var(--ink-2)}
+
+/* food calendar */
+.food{width:100%;border-collapse:collapse;font-size:14.5px}
+.food th,.food td{padding:9px 6px;border-bottom:1px solid var(--hair);text-align:center}
+.food th:first-child,.food td:first-child{text-align:left;padding-left:0}
+.food td:last-child{text-align:left;color:var(--ink-2);font-size:13px}
+.food thead th{font-size:12.5px;color:var(--ink-2);font-weight:500}
+.food .m{display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--grid)}
+.food .m.on{background:var(--cold)}
+.food td.name{font-weight:700}
+
+/* plan */
+.plan{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.plan li{padding:16px 18px 18px 0;display:grid;gap:8px;align-content:start;border-right:1px solid var(--hair);margin-right:18px}
+.plan li:last-child{border-right:0;margin-right:0}
+.plan .when{font-family:var(--f-disp);font-weight:700;font-size:19px}
+.plan .what{font-size:15px}
+.plan .why{font-size:13px;color:var(--ink-2)}
+.sources{font-size:13px;color:var(--ink-2);columns:2;column-gap:32px;padding-left:18px;margin:0}
+.sources li{break-inside:avoid;margin-bottom:5px}
+footer{padding-block:24px 56px;font-size:13px;color:var(--ink-2);border-top:1px solid var(--hair);display:grid;gap:12px}
+
+
+/* scene slots: an illustration now, a licensed photo later (same box) */
+.shot{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:10/3;background:var(--cold-wash);max-width:100%}
+.shot svg,.shot img{display:block;width:100%;height:100%;object-fit:cover}
+.shot .credit{position:absolute;right:10px;bottom:8px;font-size:11.5px;line-height:1.4;background:var(--paper);color:var(--ink-2);padding:2px 9px;border-radius:999px;opacity:.92;max-width:80%}
+.shot img{position:absolute;inset:0}
+.shot .credit a{color:inherit;text-decoration:none}
+.shot .credit a:hover{text-decoration:underline}
+.hero .shot{grid-column:1 / -1;aspect-ratio:16/5;margin-top:16px}
+@media (max-width:640px){ .shot{aspect-ratio:16/7} .hero .shot{aspect-ratio:16/8} .shot .credit{font-size:10px;padding:1px 7px;right:6px;bottom:6px;max-width:94%;border-radius:6px} }
+@media (max-width:860px){ .split{grid-template-columns:1fr;gap:20px} .plan{grid-template-columns:1fr 1fr} .plan li:nth-child(2){border-right:0;margin-right:0} .plan li:nth-child(n+3){border-top:1px solid var(--hair)} }
+@media (max-width:640px){ .hero{grid-template-columns:1fr} .figs{grid-template-columns:1fr} .plan{grid-template-columns:1fr} .plan li{border-right:0;margin-right:0;border-top:1px solid var(--hair)} .plan li:first-child{border-top:0} .sources{columns:1} .almanac{padding:14px 10px 10px} }
+</style>
+
+<header class="wrap hero">
+  <div class="big num" aria-label="87 days">87<small>days</small></div>
+  <h1>A Korean winter lasts 87 days on average. Here is what to do with them, on one page.</h1>
+  <p class="lead">By the Korea Meteorological Administration's climate normals, winter starts on December 4 and ends on February 28, seven days shorter than under the previous normals (1981–2010). This page helps you decide <b>when, where and what</b> to do in those 87 days. Pick a time on the calendar, then check the reasons in the numbers below.</p>
+  <p class="asof"><a href="ko.html" lang="ko" hreflang="ko">한국어로 보기</a>. As of October 27, 2026. Regional winter festivals have not announced their 2027 dates yet, so the calendar shows their 2026 dates.</p>
+  <figure class="shot" data-scene="hero"></figure>
+</header>
+
+<div class="wrap">
+  <figure class="almanac" id="almanac" style="margin:0">
+    <div class="alm-legend" aria-hidden="true">
+      <span><i class="key" style="background:var(--warm)"></i>City events</span>
+      <span><i class="key" style="background:var(--cold)"></i>Ice and snow festivals</span>
+      <span><i class="key" style="background:var(--mute)"></i>Seasons</span>
+      <span><i class="key dash"></i>2026 dates (2027 not announced)</span>
+    </div>
+    <div class="plot"></div>
+    <figcaption>Each month is shaded by Seoul's average temperature. Hover over a bar to see its dates. Sources: KMA 1991–2020 normals, Seoul Metropolitan Government, local governments</figcaption>
+  </figure>
+</div>
+
+<main class="wrap">
+
+<section id="city">
+  <p class="kicker">From mid-December, Seoul</p>
+  <h2>The city is where winter has grown fastest</h2>
+  <figure class="shot" data-scene="city"></figure>
+  <div class="split">
+    <div class="body">
+      <p>Seoul Winter Festa doubled in a single year, from <b>5.39 million to 10.98 million visitors</b>. The Gwanghwamun Christmas Market went from 1.64 million to 3.57 million, and the Cheonggyecheon Lantern Festival drew 3.83 million, up 55% on the year before. This winter's Festa is listed for December 11, 2026 to January 31, 2027.</p>
+    </div>
+    <figure id="ch-city">
+      <div class="legend" aria-hidden="true"><span><i style="background:var(--mute)"></i>Winter 2024–25</span><span><i style="background:var(--warm)"></i>Winter 2025–26</span></div>
+      <div class="plot"></div>
+      <figcaption>Visitors (millions). Seoul Metropolitan Government, organizer counts</figcaption>
+    </figure>
+  </div>
+  <p class="do"><b>So</b>Skip the crowded weekends and the last week of the year. Walk from Gwanghwamun to Cheonggyecheon on a December weekday evening.</p>
+</section>
+
+<section id="ice">
+  <p class="kicker">Mid-January to early February, Gangwon and Gyeongbuk</p>
+  <h2>Ice festivals now open only when the weather allows</h2>
+  <figure class="shot" data-scene="ice"></figure>
+  <div class="split">
+    <div class="body">
+      <p>Ice-fishing festivals need the river to freeze thick enough. The Inje Smelt Festival has failed to open <b>three years in a row</b>, and the Andong Amsan Ice Festival was cancelled twice because the ice was too thin. The Pyeongchang Trout Festival has postponed its opening three years running. When they do open, people come: the Hwacheon Sancheoneo (mountain trout) Ice Festival had a record 1.86 million visitors in 2025.</p>
+    </div>
+    <figure id="ch-hwacheon">
+      <div class="plot"></div>
+      <figcaption>Hwacheon Sancheoneo Ice Festival visitors (millions). 2020 was postponed twice and its final count is unconfirmed; 2021–22 were cancelled for COVID-19. Hwacheon County figures as reported</figcaption>
+    </figure>
+  </div>
+  <div class="scroll">
+    <table class="status" style="min-width:520px">
+      <thead><tr><th>Festival</th><th>2024</th><th>2025</th><th>2026</th></tr></thead>
+      <tbody>
+        <tr><td class="n">Inje Smelt Festival</td><td><span class="st off">Didn't open</span></td><td><span class="st off">Didn't open</span></td><td><span class="st off">Didn't open</span></td></tr>
+        <tr><td class="n">Andong Amsan Ice Festival</td><td><span class="st off">Cancelled</span></td><td><span class="st na">Unconfirmed</span></td><td><span class="st off">Cancelled</span></td></tr>
+        <tr><td class="n">Pyeongchang Trout Festival</td><td><span class="st late">1 week late</span></td><td><span class="st late">1 week late</span></td><td><span class="st late">8 days late</span></td></tr>
+        <tr><td class="n">Hwacheon Sancheoneo Ice Festival</td><td><span class="st ok">On time</span></td><td><span class="st ok">On time</span></td><td><span class="st ok">On time</span></td></tr>
+        <tr><td class="n">Hongcheon River Ice Festival</td><td><span class="st ok">On time</span></td><td><span class="st ok">On time</span></td><td><span class="st ok">On time</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="do"><b>So</b>Plan ice festivals for the third week of January or later, and check the official notice the day before you leave.</p>
+</section>
+
+<section id="cold">
+  <p class="kicker">January, the coldest month</p>
+  <h2>In the same January, Daegwallyeong and Jeju are 16 degrees apart</h2>
+  <figure class="shot" data-scene="cold"></figure>
+  <div class="split">
+    <div class="body">
+      <p>January is the coldest month of the year, with a national average of −0.6°C. But regions differ a lot. The average January low is −12.2°C in Daegwallyeong and 3.7°C on Jeju. Go to Daegwallyeong for snow, and to Gangneung or Jeju for a winter you can walk around in. Daegwallyeong gets 13 snowy days in January; Seoul gets 7.1.</p>
+    </div>
+    <figure id="ch-cold">
+      <div class="plot"></div>
+      <figcaption>Average January low (°C). KMA 1991–2020 normals. Daegwallyeong value from a secondary source citing KMA</figcaption>
+    </figure>
+  </div>
+  <p class="do"><b>So</b>Decide what the January trip is for. For snow, head to Daegwallyeong; for walks by the sea, Gangneung or Jeju.</p>
+</section>
+
+<section id="ski">
+  <p class="kicker">From late November</p>
+  <h2>Skiers are coming back, but there are fewer ski resorts</h2>
+  <figure class="shot" data-scene="ski"></figure>
+  <div class="split">
+    <div class="body">
+      <p>Ski resort visits peaked at 6.86 million in the 2011/12 season, fell to 1.46 million during COVID-19, and recovered to 4.43 million in 2023/24. Over the same period the number of resorts dropped from 17 to 13. No resort has confirmed its opening day for this season yet; the only report is that Yongpyong is aiming for late November.</p>
+    </div>
+    <figure id="ch-ski">
+      <div class="plot"></div>
+      <figcaption>Ski resort visits by season (millions). Press reports citing the Korea Ski Resort Business Association. Gaps: no published figure</figcaption>
+    </figure>
+  </div>
+  <p class="do"><b>So</b>Last season, the big resorts opened between late November and early December. Buy a season pass during the discount period before opening is announced.</p>
+</section>
+
+<section id="warm">
+  <p class="kicker">On a bitterly cold day</p>
+  <h2>In January, hot springs saw the biggest jump in visitors</h2>
+  <figure class="shot" data-scene="warm"></figure>
+  <div class="split">
+    <div class="body">
+      <p>In January 2026, navigation searches for hot springs rose <b>246%</b> on the year, more than museums or traditional markets. Hot spring visits nationwide reached 60.2 million in 2025, back to pre-COVID levels. The busiest is Onyang Hot Spring, and by province Gyeongbuk leads with 22.5%.</p>
+    </div>
+    <figure id="ch-warm">
+      <div class="plot"></div>
+      <figcaption>Growth in destination searches, January 1–25, 2026, vs. the same period a year earlier (%). T map data as reported</figcaption>
+    </figure>
+  </div>
+  <p class="do"><b>So</b>If you go to Gangwon for an ice festival and a cold snap is forecast, switch that day to a nearby hot spring.</p>
+</section>
+
+<section id="sea">
+  <p class="kicker">November to March, by the sea</p>
+  <h2>Winter seafood is still in season, but where it is caught is changing</h2>
+  <figure class="shot" data-scene="sea"></figure>
+  <div class="figs">
+    <div class="fig"><span class="v num">3,404<span>t →</span>6,137</span><span class="l">Yellowtail catch, Gangwon east coast</span><span class="s">2021 to 2022, up 80%, overtaking squid as the top catch. Gangwon's sea has averaged 1.1°C warmer over the last five years than before.</span></div>
+    <div class="fig"><span class="v num">3,261<span>t</span></span><span class="l">Gwamegi output, Pohang</span><span class="s">Provisional figure for 2025–26, up 53% on the previous season. The peak was 5,770 t in 2013–14.</span></div>
+    <div class="fig"><span class="v num">26<span>t</span></span><span class="l">Cockle output, Beolgyo</span><span class="s">2025. In the 1990s it was about 20,000 t a year.</span></div>
+  </div>
+  <div class="scroll">
+    <table class="food" style="min-width:560px">
+      <thead><tr><th>Food</th><th>Nov</th><th>Dec</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Yellowtail (bangeo)</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>Moseulpo on Jeju, Jagalchi in Busan, lately Goseong in Gangwon</td></tr>
+        <tr><td class="name">Oysters (gul)</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>Tongyeong, Gyeongnam (70% of the country's oyster farms)</td></tr>
+        <tr><td class="name">Gwamegi (half-dried herring or saury)</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>Guryongpo, Pohang</td></tr>
+        <tr><td class="name">Snow crab (daege)</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>Ganggu in Yeongdeok, Hupo in Uljin (until May)</td></tr>
+        <tr><td class="name">Cockles (kkomak)</td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td>Beolgyo, Boseong</td></tr>
+        <tr><td class="name">Strawberries</td><td><i class="m"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m on"></i></td><td><i class="m"></i></td><td>Nonsan, Chungnam and elsewhere (main harvest from December)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="do"><b>So</b>Have Tongyeong oysters and Guryongpo gwamegi in December, and yellowtail in January. Yellowtail wholesale prices rose 156% in a year last winter, so check prices before you go.</p>
+</section>
+
+<section id="sunrise">
+  <p class="kicker">The morning of January 1</p>
+  <h2>The first sunrise of the year is on the East Sea, and Gangneung draws the biggest crowd</h2>
+  <figure class="shot" data-scene="sunrise"></figure>
+  <div class="split">
+    <div class="body">
+      <p>On January 1, 2026, 300,000 people came to Gangneung alone to watch the sunrise: 130,000 at Gyeongpo, 110,000 at Jeongdongjin and 60,000 at Anmok and elsewhere. The sun rose first on Dokdo at 7:26, and on the mainland at Ganjeolgot in Ulsan at 7:31; Seoul saw it at 7:47. The Korea Astronomy and Space Science Institute announces the 2027 sunrise times in December.</p>
+    </div>
+    <figure id="ch-sun">
+      <div class="plot"></div>
+      <figcaption>New Year's Day 2026 sunrise crowds (thousands). Local government estimates. Ganjeolgot: "100,000 or more"</figcaption>
+    </figure>
+  </div>
+  <p class="do"><b>So</b>For a quieter sunrise, pick Anmok over Gyeongpo in Gangneung, or Seongsan Ilchulbong on Jeju (about 20,000 people).</p>
+</section>
+
+<section id="plan">
+  <p class="kicker">The one-page summary</p>
+  <h2>Spend this winter in this order</h2>
+  <ol class="plan">
+    <li><span class="when">Mid-December</span><span class="what">Winter events at Gwanghwamun and Cheonggyecheon; Tongyeong oysters and gwamegi</span><span class="why">Winter Festa starts December 11. Weekday evenings are quieter.</span></li>
+    <li><span class="when">December 31 to January 1</span><span class="what">The midnight bell at Bosingak, or sunrise on the East Sea</span><span class="why">300,000 in Gangneung. Anmok and Seongsan are less crowded.</span></li>
+    <li><span class="when">Mid-January to early February</span><span class="what">Ice-fishing festivals; hot springs on the coldest days</span><span class="why">The coldest stretch. Check opening notices before you leave.</span></li>
+    <li><span class="when">February</span><span class="what">Daegwallyeong Snow Festival, the end of ski season, strawberries</span><span class="why">Last year's snow festival ran February 13–22 with record admissions.</span></li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>Figures come from public agencies and Korean press reports; festival attendance figures are all organizer counts. 2027 regional festival dates and ski resort openings may change as they are announced. Most sources below are in Korean.</p>
+  <ul class="sources">
+    <li><a href="https://www.kma.go.kr/kma/flexer/html/press/2021/03/25/ATC202103250932093_863521e7-fd31-4f26-bfce-04a9e14ffb33.hwp.files/Sections1.html" target="_blank" rel="noopener">KMA new climate normals (1991–2020)</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Daegwallyeong" target="_blank" rel="noopener">Daegwallyeong climate (citing KMA)</a></li>
+    <li><a href="https://news.seoul.go.kr/culture/archives/531388" target="_blank" rel="noopener">Seoul Winter Festa 2025 results (Seoul)</a></li>
+    <li><a href="https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=373" target="_blank" rel="noopener">Seoul Winter Festa 2026–27 (Seoul festival portal)</a></li>
+    <li><a href="https://www.heraldk.com/article/2026020217104614775" target="_blank" rel="noopener">Gwanghwamun Market and Lantern Festival visitors (Herald Economy)</a></li>
+    <li><a href="https://www.khan.co.kr/article/202502061325001" target="_blank" rel="noopener">Hwacheon Sancheoneo Ice Festival 2025 (Kyunghyang)</a></li>
+    <li><a href="https://www.heraldk.com/article/2026012701000011688" target="_blank" rel="noopener">Hwacheon Sancheoneo Ice Festival 2023–24 (Herald Economy)</a></li>
+    <li><a href="https://www.news1.kr/local/kangwon/6058039" target="_blank" rel="noopener">Hwacheon Sancheoneo Ice Festival 2026 (News1)</a></li>
+    <li><a href="https://www.heraldk.com/article/2026011201500004716" target="_blank" rel="noopener">Inje Smelt Festival called off (Herald Economy)</a></li>
+    <li><a href="https://www.heraldk.com/article/2026011400400005963" target="_blank" rel="noopener">Andong Amsan Ice Festival cancelled (Herald Economy)</a></li>
+    <li><a href="https://www.twig24.com/news/2026/01/07/20260107500018" target="_blank" rel="noopener">Pyeongchang Trout Festival postponed (Twig)</a></li>
+    <li><a href="https://www.bizhankook.com/bk/article/22870" target="_blank" rel="noopener">Ski visits 2011/12, 2020/21 (Bizhankook)</a></li>
+    <li><a href="https://economychosun.com/site/data/html_dir/2025/01/24/2025012400021.html" target="_blank" rel="noopener">Ski visits 2018/19–2023/24 (Economy Chosun)</a></li>
+    <li><a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008365893" target="_blank" rel="noopener">Number of ski resorts (SBS)</a></li>
+    <li><a href="https://www.segye.com/newsView/20261022519026" target="_blank" rel="noopener">Yongpyong opening target (Segye Ilbo)</a></li>
+    <li><a href="https://www.hankyung.com/article/202601274593g" target="_blank" rel="noopener">January destination search growth (Korea Economic Daily)</a></li>
+    <li><a href="https://www.news1.kr/local/moi/6230853" target="_blank" rel="noopener">Hot spring visits nationwide (News1)</a></li>
+    <li><a href="https://kwnews.co.kr/article/202301151539804" target="_blank" rel="noopener">Gangwon yellowtail catch (Kangwon Ilbo)</a></li>
+    <li><a href="https://www.kyongbuk.co.kr/news/articleView.html?idxno=4064885" target="_blank" rel="noopener">Pohang gwamegi output (Kyongbuk Ilbo)</a></li>
+    <li><a href="https://www.betanews.net/article/view/beta202606290043" target="_blank" rel="noopener">Beolgyo cockle output (Betanews)</a></li>
+    <li><a href="https://www.idomin.com/news/articleView.html?idxno=2017792" target="_blank" rel="noopener">Tongyeong oyster first auction (Gyeongnam Domin Ilbo)</a></li>
+    <li><a href="https://www.fnnews.com/news/202512171348255193" target="_blank" rel="noopener">Yellowtail wholesale price (Financial News)</a></li>
+    <li><a href="https://www.kwnews.co.kr/article/202601012086887" target="_blank" rel="noopener">Gangneung sunrise crowds (Kangwon Ilbo)</a></li>
+    <li><a href="https://mobile.newsis.com/view/NISX20251231_0003461896" target="_blank" rel="noopener">Sunrise times, January 1, 2026 (Newsis)</a></li>
+    <li><a href="https://www.kwnews.co.kr/page/view/2026022314080275369" target="_blank" rel="noopener">Daegwallyeong Snow Festival 2026 (Kangwon Ilbo)</a></li>
+  </ul>
+  <p>All photos are freely licensed images from Wikimedia Commons, cropped to fit the page. If you adapt and redistribute a CC BY-SA photo, the same licence applies. A photo's place and season may differ from the text next to it (the lantern photo, for example, was taken at the November festival).</p>
+  <ul class="sources">
+    <li><a href="https://commons.wikimedia.org/wiki/File:%EA%B2%A8%EC%9A%B8_%EC%84%A4%EC%95%85%EC%82%B0_%ED%92%8D%EA%B2%BD.jpg" target="_blank" rel="noopener">Seoraksan in winter</a>, Sohyeon Bak, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Lantern_Festival_Boaters_at_Cheonggyecheon_Stream.jpg" target="_blank" rel="noopener">Seoul Lantern Festival, Cheonggyecheon</a>, Ken Eckert, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Hwacheon_Sancheoneo_Ice_Festival_01_(52620586388).jpg" target="_blank" rel="noopener">Hwacheon Sancheoneo Ice Festival</a>, Republic of Korea (Korea.net), <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener">CC BY-SA 2.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Samyang_Ranch_(129281505).jpeg" target="_blank" rel="noopener">Samyang Ranch, Daegwallyeong</a>, Yong Lee, <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ski_slopes_of_YongPyong_Resort,_2013-03-10.jpg" target="_blank" rel="noopener">Yongpyong Resort slopes</a>, Kalatpadai, CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:People_take_a_foot_bath_at_an_outdoor_public_hot_spring_in_Yuseong-gu,_Daejeon,_Korea.jpg" target="_blank" rel="noopener">Yuseong hot spring foot bath</a>, Pmlydon, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Korean_cuisine-Saengseon_hoe-02.jpg" target="_blank" rel="noopener">Raw fish (saengseon hoe)</a>, suksim, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a></li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Jeongdongjin_Beach.jpg" target="_blank" rel="noopener">Jeongdongjin Beach</a>, Loewelad, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
+  </ul>
+</footer>
+
+
+<script>
+(function(){
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(t, a, p){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+  function tx(p, x, y, s, st, an){ var t = el('text', {x:x, y:y, 'text-anchor':an || 'start', style:st}, p); t.textContent = s; return t; }
+  var TXT = 'fill:var(--ink);font-size:13px', SUB = 'fill:var(--ink-2);font-size:12px';
+
+  function tipFor(host){
+    var t = document.createElement('div'); t.className = 'tip'; t.hidden = true; host.appendChild(t);
+    return {
+      show: function(a, b, x, y){
+        t.textContent = ''; var s = document.createElement('strong'); s.textContent = a; t.appendChild(s);
+        if (b){ var d = document.createElement('span'); d.textContent = b; t.appendChild(d); }
+        t.hidden = false; var w = host.clientWidth, tw = t.offsetWidth;
+        t.style.left = Math.max(0, Math.min(x + 12, w - tw)) + 'px'; t.style.top = Math.max(0, y - t.offsetHeight - 10) + 'px';
+      },
+      hide: function(){ t.hidden = true; }
+    };
+  }
+  function bindTip(node, tip, host, a, b, fx, fy){
+    function show(e){ var r = host.getBoundingClientRect(); var x = e && e.clientX ? e.clientX - r.left : fx; var y = e && e.clientY ? e.clientY - r.top : fy; tip.show(a, b, x, y); }
+    node.addEventListener('pointermove', show); node.addEventListener('focus', show);
+    node.addEventListener('pointerleave', tip.hide); node.addEventListener('blur', tip.hide);
+  }
+  function table(fig, head, rows){
+    var d = document.createElement('details'); d.className = 'tv';
+    var s = document.createElement('summary'); s.textContent = 'Show as table'; d.appendChild(s);
+    var t = document.createElement('table'), tr = document.createElement('tr');
+    head.forEach(function(h){ var c = document.createElement('th'); c.textContent = h; tr.appendChild(c); }); t.appendChild(tr);
+    rows.forEach(function(r){ var row = document.createElement('tr'); r.forEach(function(v){ var c = document.createElement('td'); c.textContent = v; row.appendChild(c); }); t.appendChild(row); });
+    d.appendChild(t); fig.insertBefore(d, fig.querySelector('figcaption'));
+  }
+  function onSize(node, fn){ fn(); if ('ResizeObserver' in window) new ResizeObserver(fn).observe(node); else window.addEventListener('resize', fn); }
+  function bar(x, y, len, h){ var r = Math.min(4, len / 2, h / 2); if (len <= 0) return ''; return 'M'+x+' '+y+'H'+(x+len-r)+'Q'+(x+len)+' '+y+' '+(x+len)+' '+(y+r)+'V'+(y+h-r)+'Q'+(x+len)+' '+(y+h)+' '+(x+len-r)+' '+(y+h)+'H'+x+'Z'; }
+  function vbar(x, base, w, h){ var r = Math.min(4, w / 2, h / 2); var y = base - h; if (h <= 0) return ''; return 'M'+x+' '+base+'V'+(y+r)+'Q'+x+' '+y+' '+(x+r)+' '+y+'H'+(x+w-r)+'Q'+(x+w)+' '+y+' '+(x+w)+' '+(y+r)+'V'+base+'Z'; }
+
+  /* ---------- almanac: Dec 1 2026 to Feb 28 2027 ---------- */
+  var DAYS = 90;
+  function dayOf(md){ var m = +md.slice(0, 2), d = +md.slice(3); return m === 12 ? d - 1 : m === 1 ? 31 + d - 1 : 62 + d - 1; }
+  var months = [{name:'Dec', s:0, e:31, mean:0.2, min:-3.4}, {name:'Jan', s:31, e:62, mean:-1.9, min:-5.5}, {name:'Feb', s:62, e:90, mean:0.7, min:-3.2}];
+  var groups = [
+    {name:'City', rows:[
+      {name:'Seoul Winter Festa', s:'12-11', e:'01-31', kind:'warm', sure:true, note:'Dec 11, 2026 to Jan 31, 2027 (Seoul festival portal)'},
+      {name:'New Year bell', s:'12-31', e:'12-31', kind:'warm', sure:true, dot:true, note:'Midnight, Dec 31, at Bosingak in Seoul'},
+      {name:'First sunrise', s:'01-01', e:'01-01', kind:'warm', sure:true, dot:true, note:'2026: Dokdo 7:26, Ganjeolgot 7:31, Seoul 7:47'}
+    ]},
+    {name:'Ice and snow', rows:[
+      {name:'Hongcheon Ice', s:'01-09', e:'01-25', kind:'cold', note:'Hongcheon River Ice Festival. 2026: Jan 9 to 25, about 270,000 visitors'},
+      {name:'Pyeongchang Trout', s:'01-09', e:'02-09', kind:'cold', note:'Pyeongchang Trout Festival. 2026: opened Jan 9 (delayed by late freezing), about 250,000 visitors'},
+      {name:'Hwacheon Ice', s:'01-10', e:'02-01', kind:'cold', note:'Hwacheon Sancheoneo Ice Festival. 2026: Jan 10 to Feb 1, about 1.59 million visitors'},
+      {name:'Taebaek Snow', s:'01-31', e:'02-08', kind:'cold', note:'Taebaeksan Snow Festival. 2026: Jan 31 to Feb 8, about 55,000 visitors'},
+      {name:'Daegwallyeong Snow', s:'02-13', e:'02-22', kind:'cold', note:'Daegwallyeong Snow Festival. 2026: Feb 13 to 22, about 50,000 paid admissions'}
+    ]},
+    {name:'Seasons', rows:[
+      {name:'Skiing', s:'12-01', e:'02-28', kind:'mute', sure:true, note:'Last season the big resorts opened Nov 21 to Dec 5 and ran into March'},
+      {name:'Winter seafood', s:'12-01', e:'02-28', kind:'mute', sure:true, note:'Yellowtail, oysters and gwamegi are in season from November to February'}
+    ]}
+  ];
+  (function(){
+    var fig = document.getElementById('almanac'), host = fig.querySelector('.plot'), tip = tipFor(fig);
+    var flat = []; groups.forEach(function(g){ g.rows.forEach(function(r){ flat.push([r.name, r.s === r.e ? r.s : r.s + ' ~ ' + r.e, r.note]); }); });
+    table(fig, ['Item', 'Dates (MM-DD)', 'Details'], flat);
+    function draw(){
+      var old = host.querySelector('svg'); if (old) old.remove();
+      var W = host.clientWidth; if (!W) return; var nw = W < 560;
+      var L = nw ? 128 : 160, R = 8, top = nw ? 70 : 64, rowH = 30, gH = 30;
+      if (W < L + 120) return; // too narrow mid-layout; ResizeObserver redraws once it has room
+      var n = 0; groups.forEach(function(g){ n += g.rows.length; });
+      var H = top + groups.length * gH + n * rowH + 36;
+      var X = function(d){ return L + d / DAYS * (W - L - R); };
+      var svg = el('svg', {viewBox:'0 0 ' + W + ' ' + H, height:H, role:'img', 'aria-label':'Calendar of winter events and seasons, December 2026 to February 2027'});
+      host.insertBefore(svg, host.firstChild);
+      // month columns tinted by Seoul mean temperature (diverging: below zero cold, above zero neutral-warm)
+      months.forEach(function(m){
+        var x0 = X(m.s), x1 = X(m.e);
+        el('rect', {x:x0, y:top - 6, width:x1 - x0 - 2, height:H - top - 24, rx:6, style:'fill:' + (m.mean < 0 ? 'var(--cold-wash)' : 'var(--neutral)')}, svg);
+        tx(svg, x0 + (nw ? 6 : 10), 22, m.name, 'fill:var(--ink);font-size:15px;font-weight:700;font-family:var(--f-disp)');
+        if (nw){ tx(svg, x0 + 6, 40, 'avg ' + m.mean + '°', SUB + ';font-size:11px'); tx(svg, x0 + 6, 55, 'low ' + m.min + '°', SUB + ';font-size:11px'); } else tx(svg, x0 + 10, 42, 'Seoul avg ' + m.mean + '°C, low ' + m.min + '°C', SUB + ';font-variant-numeric:tabular-nums');
+      });
+      // the 87-day winter
+      var w0 = X(dayOf('12-04')), w1 = X(DAYS);
+      el('line', {x1:w0, x2:w1 - 2, y1:H - 14, y2:H - 14, style:'stroke:var(--ink);stroke-width:1.5'}, svg);
+      el('line', {x1:w0, x2:w0, y1:H - 19, y2:H - 9, style:'stroke:var(--ink);stroke-width:1.5'}, svg);
+      el('line', {x1:w1 - 2, x2:w1 - 2, y1:H - 19, y2:H - 9, style:'stroke:var(--ink);stroke-width:1.5'}, svg);
+      tx(svg, (w0 + w1) / 2, H - 20, nw ? 'Normal winter, 87 days' : 'Normal winter, 87 days (Dec 4 to Feb 28)', 'fill:var(--ink);font-size:12.5px;font-weight:700', 'middle');
+      var y = top, i = 0;
+      groups.forEach(function(g){
+        tx(svg, 0, y + 19, g.name, 'fill:var(--ink-2);font-size:12.5px;font-weight:700');
+        y += gH;
+        g.rows.forEach(function(r){
+          var a = dayOf(r.s), b = dayOf(r.e) + 1, cy = y + rowH / 2;
+          tx(svg, nw ? 6 : 12, cy + 4.5, r.name, nw ? 'fill:var(--ink);font-size:12px' : TXT);
+          var col = r.kind === 'warm' ? 'var(--warm)' : r.kind === 'cold' ? 'var(--cold)' : 'var(--mute)';
+          var mark;
+          if (r.dot){
+            mark = el('circle', {cx:(X(a) + X(b)) / 2, cy:cy, r:6, style:'fill:' + col + ';stroke:var(--paper);stroke-width:2'}, svg);
+          } else if (r.sure){
+            mark = el('path', {d:bar(X(a), cy - 7, X(b) - X(a) - 2, 14), class:'grow', style:'fill:' + col + ';animation-delay:' + (i * 60) + 'ms'}, svg);
+          } else {
+            mark = el('rect', {x:X(a), y:cy - 7, width:X(b) - X(a) - 2, height:14, rx:4, class:'grow', style:'fill:' + col + ';fill-opacity:.22;stroke:' + col + ';stroke-width:1.5;stroke-dasharray:4 3;animation-delay:' + (i * 60) + 'ms'}, svg);
+          }
+          var hit = el('rect', {x:0, y:y, width:W, height:rowH, fill:'transparent', class:'hit', tabindex:'0', 'aria-label':r.name + ', ' + r.note}, svg);
+          bindTip(hit, tip, fig, r.name, r.note, X(a), y + 20);
+          y += rowH; i++;
+        });
+      });
+    }
+    onSize(host, draw);
+  })();
+
+  /* ---------- grouped columns: city events ---------- */
+  (function(){
+    var fig = document.getElementById('ch-city'), host = fig.querySelector('.plot'), tip = tipFor(fig);
+    var rows = [{n:'Seoul Winter Festa', a:5.39, b:10.98}, {n:'Gwanghwamun Market', a:1.64, b:3.57}];
+    table(fig, ['Event', '2024–25', '2025–26'], rows.map(function(r){ return [r.n, r.a + ' million', r.b + ' million']; }));
+    function draw(){
+      var old = host.querySelector('svg'); if (old) old.remove(); var W = host.clientWidth; if (!W) return;
+      var H = 260, base = 220, top = 24, max = 12, L = 36;
+      var svg = el('svg', {viewBox:'0 0 ' + W + ' ' + H, height:H, role:'img', 'aria-label':'Seoul winter event visitors compared'}); host.insertBefore(svg, host.firstChild);
+      var Y = function(v){ return (v / max) * (base - top); };
+      [0, 4, 8, 12].forEach(function(t){ var yy = base - Y(t); el('line', {x1:L, x2:W, y1:yy, y2:yy, style:'stroke:var(--grid);stroke-width:1'}, svg); tx(svg, L - 6, yy + 4, t === 0 ? '0' : t, 'fill:var(--ink-2);font-size:11.5px;font-variant-numeric:tabular-nums', 'end'); });
+      var slot = (W - L) / rows.length, bw = Math.min(40, slot / 4);
+      rows.forEach(function(r, i){
+        var cx = L + slot * i + slot / 2;
+        [['a', 'var(--mute)', '2024–25'], ['b', 'var(--warm)', '2025–26']].forEach(function(s, j){
+          var x = cx + (j === 0 ? -bw - 2 : 2), h = Y(r[s[0]]);
+          el('path', {d:vbar(x, base, bw, h), style:'fill:' + s[1]}, svg);
+          tx(svg, x + bw / 2, base - h - 6, r[s[0]] + '', 'fill:var(--ink);font-size:12.5px;font-weight:' + (j ? 700 : 400) + ';font-variant-numeric:tabular-nums', 'middle');
+          var hit = el('rect', {x:x - 4, y:top, width:bw + 8, height:base - top, fill:'transparent', class:'hit', tabindex:'0', 'aria-label':r.n + ' ' + s[2] + ' ' + r[s[0]] + ' million'}, svg);
+          bindTip(hit, tip, fig, r[s[0]] + ' million', r.n + ', winter ' + s[2], x, base - h);
+        });
+        tx(svg, cx, base + 22, r.n, TXT, 'middle');
+      });
+      el('line', {x1:L, x2:W, y1:base, y2:base, style:'stroke:var(--axis);stroke-width:1'}, svg);
+    }
+    onSize(host, draw);
+  })();
+
+  /* ---------- line with gaps: generic ---------- */
+  function lineGaps(id, labels, vals, max, ticks, fmtTick, hiIdx, unit, aria){
+    var fig = document.getElementById(id), host = fig.querySelector('.plot'), tip = tipFor(fig);
+    table(fig, ['Period', 'Value'], labels.map(function(l, i){ return [l, vals[i] == null ? 'No published figure' : vals[i] + unit]; }));
+    function draw(){
+      var old = host.querySelector('svg'); if (old) old.remove(); var W = host.clientWidth; if (!W) return;
+      var H = 260, base = 214, top = 24, L = 40, R = 18;
+      var svg = el('svg', {viewBox:'0 0 ' + W + ' ' + H, height:H, role:'img', 'aria-label':aria}); host.insertBefore(svg, host.firstChild);
+      var X = function(i){ return L + i / (labels.length - 1) * (W - L - R); }, Y = function(v){ return base - v / max * (base - top); };
+      ticks.forEach(function(t){ el('line', {x1:L, x2:W - R, y1:Y(t), y2:Y(t), style:'stroke:var(--grid);stroke-width:1'}, svg); tx(svg, L - 6, Y(t) + 4, fmtTick(t), 'fill:var(--ink-2);font-size:11.5px;font-variant-numeric:tabular-nums', 'end'); });
+      el('line', {x1:L, x2:W - R, y1:base, y2:base, style:'stroke:var(--axis);stroke-width:1'}, svg);
+      var step = labels.length > 9 ? 2 : 1;
+      labels.forEach(function(l, i){ if (i % step === 0 || i === labels.length - 1) tx(svg, X(i), base + 20, l, 'fill:var(--ink-2);font-size:11.5px', 'middle'); });
+      // segments: solid between consecutive known points, dashed across gaps
+      var prev = null;
+      vals.forEach(function(v, i){
+        if (v == null) return;
+        if (prev != null){
+          var solid = (i - prev === 1);
+          el('line', {x1:X(prev), y1:Y(vals[prev]), x2:X(i), y2:Y(v), style:'stroke:' + (solid ? 'var(--cold)' : 'var(--axis)') + ';stroke-width:2;stroke-linecap:round' + (solid ? '' : ';stroke-dasharray:3 5')}, svg);
+        }
+        prev = i;
+      });
+      vals.forEach(function(v, i){
+        if (v == null) return;
+        var hl = hiIdx.indexOf(i) >= 0;
+        el('circle', {cx:X(i), cy:Y(v), r:hl ? 5.5 : 4, style:'fill:var(--cold);stroke:var(--paper);stroke-width:2'}, svg);
+        if (hl) tx(svg, X(i), Y(v) - 12, v + '', 'fill:var(--ink);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums', 'middle');
+        var hit = el('circle', {cx:X(i), cy:Y(v), r:14, fill:'transparent', class:'hit', tabindex:'0', 'aria-label':labels[i] + ' ' + v + unit}, svg);
+        bindTip(hit, tip, fig, v + unit, labels[i], X(i), Y(v));
+      });
+    }
+    onSize(host, draw);
+  }
+  lineGaps('ch-hwacheon', ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'], [1.84, null, null, null, 1.31, 1.53, 1.86, 1.59], 2, [0, 0.5, 1, 1.5, 2], function(t){ return t; }, [0, 4, 6, 7], 'M', 'Hwacheon Sancheoneo Ice Festival visitors over time');
+  lineGaps('ch-ski', ['11/12', '12/13', '13/14', '14/15', '15/16', '16/17', '17/18', '18/19', '19/20', '20/21', '21/22', '22/23', '23/24'], [6.86, null, null, null, 4.92, null, null, 4.39, 3.76, 1.46, 3.83, 4.21, 4.43], 7, [0, 2, 4, 6], function(t){ return t; }, [0, 9, 12], 'M', 'Ski resort visits by season');
+
+  /* ---------- horizontal bars: generic, signed ---------- */
+  function hbars(id, rows, min, max, ticks, fmt, aria, colorOf){
+    var fig = document.getElementById(id), host = fig.querySelector('.plot'), tip = tipFor(fig);
+    table(fig, ['Item', 'Value'], rows.map(function(r){ return [r.n, fmt(r.v)]; }));
+    function draw(){
+      var old = host.querySelector('svg'); if (old) old.remove(); var W = host.clientWidth; if (!W) return;
+      var L = Math.min(120, W * 0.32), R = 56, rowH = 44, top = 4, axisH = 24;
+      var H = top + rows.length * rowH + axisH;
+      var svg = el('svg', {viewBox:'0 0 ' + W + ' ' + H, height:H, role:'img', 'aria-label':aria}); host.insertBefore(svg, host.firstChild);
+      var X = function(v){ return L + (v - min) / (max - min) * (W - L - R); };
+      ticks.forEach(function(t){ el('line', {x1:X(t), x2:X(t), y1:top, y2:top + rows.length * rowH, style:'stroke:var(--grid);stroke-width:1'}, svg); tx(svg, X(t), H - 6, fmt(t), 'fill:var(--ink-2);font-size:11.5px;font-variant-numeric:tabular-nums', 'middle'); });
+      el('line', {x1:X(0), x2:X(0), y1:top, y2:top + rows.length * rowH, style:'stroke:var(--axis);stroke-width:1'}, svg);
+      rows.forEach(function(r, i){
+        var cy = top + i * rowH + rowH / 2, x0 = X(0), x1 = X(r.v), h = 18;
+        tx(svg, L - 12, cy + 4.5, r.n, 'fill:var(--ink);font-size:13.5px;font-weight:' + (r.hl ? 700 : 400), 'end');
+        var len = Math.abs(x1 - x0);
+        var p = el('path', {d:bar(0, 0, len, h), style:'fill:' + colorOf(r)}, svg);
+        p.setAttribute('transform', r.v >= 0 ? 'translate(' + x0 + ',' + (cy - h / 2) + ')' : 'translate(' + x0 + ',' + (cy - h / 2) + ') scale(-1,1)');
+        var lx = r.v >= 0 ? x1 + 8 : x1 - 8;
+        tx(svg, lx, cy + 4.5, fmt(r.v), 'fill:var(--ink);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums', r.v >= 0 ? 'start' : 'end');
+        var hit = el('rect', {x:0, y:cy - rowH / 2, width:W, height:rowH, fill:'transparent', class:'hit', tabindex:'0', 'aria-label':r.n + ' ' + fmt(r.v)}, svg);
+        bindTip(hit, tip, fig, fmt(r.v), r.n + (r.note ? ', ' + r.note : ''), x1, cy - 10);
+      });
+    }
+    onSize(host, draw);
+  }
+  hbars('ch-cold', [{n:'Daegwallyeong', v:-12.2}, {n:'Seoul', v:-5.5}, {n:'Gangneung', v:-2.7}, {n:'Jeju', v:3.7}], -14, 6, [-12, -8, -4, 0, 4], function(v){ return v + '°'; }, 'Average January low by region', function(r){ return r.v < 0 ? 'var(--cold)' : 'var(--warm)'; });
+  hbars('ch-warm', [{n:'Hot springs', v:246.1, hl:true}, {n:'Museums', v:130.1}, {n:'Markets', v:34.4}, {n:'Concert halls', v:26.4}], 0, 280, [0, 100, 200], function(v){ return v === 0 ? '0' : '+' + v + '%'; }, 'Growth in January destination searches', function(r){ return r.hl ? 'var(--warm)' : 'var(--mute)'; });
+  hbars('ch-sun', [{n:'Gangneung', v:300, hl:true, note:'Gyeongpo 130K, Jeongdongjin 110K, Anmok and others 60K'}, {n:'Ganjeolgot', v:100, note:'Ulsan, 100,000 or more'}, {n:'Homigot', v:50, note:'Pohang'}, {n:'Seongsan', v:20, note:'Seongsan Ilchulbong, Jeju, about 20,000'}], 0, 340, [0, 100, 200, 300], function(v){ return v === 0 ? '0' : v + 'K'; }, 'New Year 2026 sunrise crowds', function(r){ return r.hl ? 'var(--warm)' : 'var(--mute)'; });
+})();
+
+/* ---------- scenes: illustrations until licensed photos arrive ---------- */
+(function(){
+  // Fill a key with {src, alt, credit} to replace the illustration with a photo.
+  // src is a path next to this file (photos/), an uploaded asset url, or a data: URI; credit names the photographer and the licence.
+  // pos is the object-position used when the 10:3 strip crops the photo; page links the credit to the source.
+  var PHOTOS = {
+    hero:    {src:'photos/hero.jpg', alt:'Snow-covered ridges of Seoraksan in winter', place:'Seoraksan in winter', credit:'Sohyeon Bak, CC BY-SA 3.0', page:'https://commons.wikimedia.org/wiki/File:%EA%B2%A8%EC%9A%B8_%EC%84%A4%EC%95%85%EC%82%B0_%ED%92%8D%EA%B2%BD.jpg', pos:'center 40%'},
+    city:    {src:'photos/city.jpg', alt:'Lantern boat sculptures on Cheonggyecheon stream at night, with onlookers', place:'Seoul Lantern Festival, Cheonggyecheon', credit:'Ken Eckert, CC BY-SA 4.0', page:'https://commons.wikimedia.org/wiki/File:Lantern_Festival_Boaters_at_Cheonggyecheon_Stream.jpg', pos:'center 80%'},
+    ice:     {src:'photos/ice.jpg', alt:'Crowds ice fishing on a frozen river', place:'Ice fishing, Hwacheon Sancheoneo Festival', credit:'Korea.net, CC BY-SA 2.0', page:'https://commons.wikimedia.org/wiki/File:Hwacheon_Sancheoneo_Ice_Festival_01_(52620586388).jpg', pos:'center 95%'},
+    cold:    {src:'photos/cold.jpg', alt:'Snowy ranch hills and a wind turbine in Daegwallyeong', place:'Samyang Ranch in snow, Daegwallyeong', credit:'Yong Lee, CC BY 3.0', page:'https://commons.wikimedia.org/wiki/File:Samyang_Ranch_(129281505).jpeg', pos:'center 100%'},
+    ski:     {src:'photos/ski.jpg', alt:'Snowy slopes and buildings of Yongpyong Resort', place:'Yongpyong Resort slopes', credit:'Kalatpadai, CC0', page:'https://commons.wikimedia.org/wiki/File:Ski_slopes_of_YongPyong_Resort,_2013-03-10.jpg', pos:'center 45%'},
+    warm:    {src:'photos/warm.jpg', alt:'People soaking their feet at an outdoor hot spring foot bath', place:'Yuseong hot spring foot bath, Daejeon', credit:'Pmlydon, CC BY-SA 4.0', page:'https://commons.wikimedia.org/wiki/File:People_take_a_foot_bath_at_an_outdoor_public_hot_spring_in_Yuseong-gu,_Daejeon,_Korea.jpg', pos:'center 72%'},
+    sea:     {src:'photos/sea.jpg', alt:'A platter of sliced raw fish', place:'Raw fish (hoe)', credit:'suksim, CC BY 2.0', page:'https://commons.wikimedia.org/wiki/File:Korean_cuisine-Saengseon_hoe-02.jpg', pos:'center 50%'},
+    sunrise: {src:'photos/sunrise.jpg', alt:'Jeongdongjin Beach glowing red before sunrise, with people on the sand', place:'Dawn at Jeongdongjin Beach', credit:'Loewelad, CC BY-SA 3.0', page:'https://commons.wikimedia.org/wiki/File:Jeongdongjin_Beach.jpg', pos:'center 55%'}
+  };
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(t, a, p){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+  function rng(seed){ return function(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+  var W = 1600, H = 480;
+  function ridge(g, base, amp, f, ph, fill, op){
+    var pts = '0,' + H;
+    for (var x = 0; x <= W; x += 40){ var y = base - amp * (Math.sin(x * f + ph) * .6 + Math.sin(x * f * 2.3 + ph * 1.7) * .4); pts += ' ' + x + ',' + y.toFixed(1); }
+    pts += ' ' + W + ',' + H;
+    el('polygon', {points:pts, style:'fill:' + fill + ';fill-opacity:' + op}, g);
+  }
+  function snow(g, n, seed, ymax){ var r = rng(seed); for (var i = 0; i < n; i++) el('circle', {cx:(r() * W).toFixed(0), cy:(r() * (ymax || H)).toFixed(0), r:(1.4 + r() * 2.6).toFixed(1), style:'fill:var(--paper);fill-opacity:.85'}, g); }
+  function wave(g, y, amp, len, color, op, w){ var d = 'M0 ' + y; for (var x = 0; x <= W; x += len) d += ' Q' + (x + len / 4) + ' ' + (y - amp) + ' ' + (x + len / 2) + ' ' + y + ' T' + (x + len) + ' ' + y; el('path', {d:d, style:'fill:none;stroke:' + color + ';stroke-opacity:' + op + ';stroke-width:' + (w || 3) + ';stroke-linecap:round'}, g); }
+  function bg(g, c){ el('rect', {x:0, y:0, width:W, height:H, style:'fill:' + c}, g); }
+  function label(g, x, y, big, small, anchor){
+    el('text', {x:x, y:y, 'text-anchor':anchor, style:'fill:var(--ink);font-family:var(--f-disp);font-weight:900;font-size:84px'}, g).textContent = big;
+    el('text', {x:x, y:y + 40, 'text-anchor':anchor, style:'fill:var(--ink-2);font-family:var(--f-body);font-size:26px;font-weight:500'}, g).textContent = small;
+  }
+  var scenes = {
+    hero: function(g){ bg(g, 'var(--cold-wash)'); el('circle', {cx:1250, cy:150, r:56, style:'fill:var(--warm);fill-opacity:.85'}, g);
+      ridge(g, 250, 60, .004, 1, 'var(--mute)', .55); ridge(g, 300, 70, .0032, 2.4, 'var(--cold)', .35); ridge(g, 360, 55, .005, 4, 'var(--cold)', .7); ridge(g, 420, 35, .006, .7, 'var(--ink)', .88); snow(g, 110, 7); },
+    city: function(g){ bg(g, 'var(--neutral)'); var r = rng(3);
+      for (var i = 0; i < 18; i++){ var bw = 60 + r() * 70, bh = 90 + r() * 170, bx = i * 92 - 20; el('rect', {x:bx, y:330 - bh, width:bw, height:bh + 10, style:'fill:var(--mute);fill-opacity:.45'}, g); }
+      el('rect', {x:0, y:330, width:W, height:150, style:'fill:var(--cold);fill-opacity:.22'}, g); wave(g, 380, 8, 120, 'var(--cold)', .6); wave(g, 430, 6, 90, 'var(--cold)', .4);
+      [[40, 120], [150, 150], [260, 120]].forEach(function(c, k){ var y0 = c[0], sag = c[1]; el('path', {d:'M0 ' + y0 + ' Q800 ' + (y0 + sag) + ' 1600 ' + y0, style:'fill:none;stroke:var(--axis);stroke-width:2'}, g);
+        for (var x = 60 + k * 30; x < W; x += 110){ var t = x / W, y = (1 - t) * (1 - t) * y0 + 2 * t * (1 - t) * (y0 + sag) + t * t * y0; el('circle', {cx:x, cy:y + 22, r:26, style:'fill:var(--warm-wash);fill-opacity:.9'}, g); el('circle', {cx:x, cy:y + 22, r:13, style:'fill:var(--warm);fill-opacity:' + (.55 + r() * .45).toFixed(2)}, g); } }); },
+    ice: function(g){ bg(g, 'var(--cold-wash)'); ridge(g, 170, 30, .005, 2, 'var(--cold)', .45); el('rect', {x:0, y:190, width:W, height:290, style:'fill:var(--paper)'}, g); var r = rng(11);
+      for (var row = 0; row < 5; row++){ var y = 215 + row * row * 12 + row * 30, s = .45 + row * .2; for (var i = 0; i < 9; i++){ var x = (i + r() * .6) * W / 9 + 30; el('ellipse', {cx:x, cy:y, rx:28 * s, ry:9 * s, style:'fill:var(--cold);fill-opacity:.75'}, g); if (r() > .55) el('rect', {x:x + 30 * s, y:y - 34 * s, width:10 * s, height:28 * s, rx:4 * s, style:'fill:var(--ink);fill-opacity:.8'}, g); } }
+      [[260, 'var(--warm)'], [700, 'var(--mute)'], [1180, 'var(--warm)']].forEach(function(t){ el('polygon', {points:(t[0] - 40) + ',205 ' + t[0] + ',150 ' + (t[0] + 40) + ',205', style:'fill:' + t[1]}, g); }); },
+    cold: function(g){ el('rect', {x:0, y:0, width:800, height:H, style:'fill:var(--cold-wash)'}, g); el('rect', {x:800, y:0, width:800, height:H, style:'fill:var(--neutral)'}, g);
+      var left = el('g', {}, g); ridge(left, 330, 90, .006, 1.3, 'var(--cold)', .55); ridge(left, 400, 50, .008, 3, 'var(--ink)', .85); el('rect', {x:800, y:0, width:800, height:H, style:'fill:var(--neutral)'}, g);
+      el('rect', {x:800, y:310, width:800, height:170, style:'fill:var(--cold);fill-opacity:.3'}, g); el('circle', {cx:1180, cy:235, r:54, style:'fill:var(--warm)'}, g); wave(g, 360, 6, 100, 'var(--paper)', .9); wave(g, 410, 5, 80, 'var(--paper)', .7);
+      snow(el('g', {}, g), 0, 1); var sg = el('g', {}, g); var r = rng(5); for (var i = 0; i < 60; i++) el('circle', {cx:(r() * 780).toFixed(0), cy:(r() * H).toFixed(0), r:(1.4 + r() * 2.4).toFixed(1), style:'fill:var(--paper);fill-opacity:.85'}, sg);
+      label(g, 60, 110, '-12.2°', 'Daegwallyeong, Jan low', 'start'); label(g, 1540, 110, '3.7°', 'Jeju, Jan low', 'end'); },
+    ski: function(g){ bg(g, 'var(--cold-wash)'); el('polygon', {points:'0,480 0,250 1600,70 1600,480', style:'fill:var(--paper)'}, g); var r = rng(17);
+      for (var i = 0; i < 26; i++){ var x = 40 + i * 62, y = 250 - x * (180 / 1600) + 10 + r() * 40; el('polygon', {points:(x - 12) + ',' + (y + 30) + ' ' + x + ',' + (y - 6) + ' ' + (x + 12) + ',' + (y + 30), style:'fill:var(--ink);fill-opacity:.75'}, g); }
+      el('line', {x1:120, y1:440, x2:1520, y2:140, style:'stroke:var(--axis);stroke-width:3'}, g);
+      for (var t = .08; t < 1; t += .11){ var cx = 120 + t * 1400, cy = 440 - t * 300; el('line', {x1:cx, y1:cy, x2:cx, y2:cy + 26, style:'stroke:var(--axis);stroke-width:2'}, g); el('rect', {x:cx - 14, y:cy + 24, width:28, height:12, rx:3, style:'fill:var(--warm)'}, g); }
+      el('path', {d:'M1500 150 C1300 260 1100 230 900 330 S500 420 300 470', style:'fill:none;stroke:var(--mute);stroke-width:3'}, g); el('path', {d:'M1510 160 C1310 270 1110 240 910 340 S510 430 310 480', style:'fill:none;stroke:var(--mute);stroke-width:3'}, g); snow(g, 50, 9, 260); },
+    warm: function(g){ bg(g, 'var(--neutral)'); el('rect', {x:0, y:300, width:W, height:180, style:'fill:var(--paper)'}, g); el('ellipse', {cx:800, cy:360, rx:520, ry:95, style:'fill:var(--cold);fill-opacity:.35'}, g);
+      var r = rng(23); for (var i = 0; i < 16; i++){ var a = i / 16 * Math.PI * 2; el('circle', {cx:800 + Math.cos(a) * 540, cy:360 + Math.sin(a) * 105, r:(18 + r() * 22).toFixed(0), style:'fill:var(--mute)'}, g); }
+      for (var k = 0; k < 7; k++){ var x = 420 + k * 125, d = 'M' + x + ' 330'; for (var y = 330; y > 60; y -= 40) d += ' q' + (k % 2 ? 22 : -22) + ' -20 0 -40'; el('path', {d:d, style:'fill:none;stroke:var(--axis);stroke-width:9;stroke-linecap:round;stroke-opacity:.8'}, g); }
+      snow(g, 70, 31, 300); },
+    sea: function(g){ bg(g, 'var(--cold-wash)'); for (var i = 0; i < 7; i++) wave(g, 90 + i * 55, 10, 140 + i * 10, 'var(--cold)', .25 + i * .08, 3);
+      [[420, 230, 1], [820, 330, .8], [1180, 200, 1.15], [1340, 360, .7]].forEach(function(f){ var x = f[0], y = f[1], s = f[2];
+        el('path', {d:'M' + x + ' ' + y + ' q' + (90 * s) + ' ' + (-46 * s) + ' ' + (190 * s) + ' 0 q' + (-100 * s) + ' ' + (46 * s) + ' ' + (-190 * s) + ' 0 Z', style:'fill:var(--ink);fill-opacity:.82'}, g);
+        el('polygon', {points:(x + 186 * s) + ',' + y + ' ' + (x + 236 * s) + ',' + (y - 30 * s) + ' ' + (x + 224 * s) + ',' + y + ' ' + (x + 236 * s) + ',' + (y + 30 * s), style:'fill:var(--ink);fill-opacity:.82'}, g);
+        el('circle', {cx:x + 30 * s, cy:y - 6 * s, r:4 * s, style:'fill:var(--paper)'}, g); }); },
+    sunrise: function(g){ el('rect', {x:0, y:0, width:W, height:110, style:'fill:var(--neutral)'}, g); el('rect', {x:0, y:110, width:W, height:110, style:'fill:var(--warm-wash);fill-opacity:.6'}, g); el('rect', {x:0, y:220, width:W, height:90, style:'fill:var(--warm-wash)'}, g);
+      el('path', {d:'M690 310 A110 110 0 0 1 910 310 Z', style:'fill:var(--warm)'}, g); el('rect', {x:0, y:310, width:W, height:170, style:'fill:var(--cold);fill-opacity:.32'}, g); el('line', {x1:0, y1:310, x2:W, y2:310, style:'stroke:var(--ink);stroke-opacity:.35;stroke-width:2'}, g);
+      [[180, 335], [140, 365], [100, 395], [70, 425], [44, 455]].forEach(function(l){ el('line', {x1:800 - l[0], y1:l[1], x2:800 + l[0], y2:l[1], style:'stroke:var(--warm);stroke-opacity:.7;stroke-width:6;stroke-linecap:round'}, g); }); }
+  };
+  var CAP = {hero:'Snowy mountain ridges', city:'Cheonggyecheon lanterns', ice:'Ice-fishing festival', cold:'Daegwallyeong and Jeju', ski:'Ski slopes', warm:'Outdoor hot spring in the snow', sea:'Yellowtail of the winter sea', sunrise:'Sunrise on the East Sea'};
+  document.querySelectorAll('.shot[data-scene]').forEach(function(fig){
+    var key = fig.getAttribute('data-scene'), ph = PHOTOS[key], cr = document.createElement('figcaption'); cr.className = 'credit';
+    if (ph && ph.src){
+      var img = document.createElement('img'); img.src = ph.src; img.alt = ph.alt || CAP[key]; if (key !== 'hero') img.loading = 'lazy'; if (ph.pos) img.style.objectPosition = ph.pos; fig.appendChild(img);
+      var label = (ph.place || CAP[key]) + '. Photo: ' + (ph.credit || '');
+      if (ph.page){ var a = document.createElement('a'); a.href = ph.page; a.target = '_blank'; a.rel = 'noopener'; a.textContent = label; cr.appendChild(a); } else cr.textContent = label;
+    }
+    else { var svg = el('svg', {viewBox:'0 0 ' + W + ' ' + H, preserveAspectRatio:'xMidYMid slice', role:'img', 'aria-label':'Illustration: ' + CAP[key]}); scenes[key](el('g', {}, svg)); fig.appendChild(svg); cr.textContent = 'Illustration: ' + CAP[key]; }
+    fig.appendChild(cr);
+  });
+})();
+</script>
