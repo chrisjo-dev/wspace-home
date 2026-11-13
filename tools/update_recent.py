@@ -2,7 +2,7 @@
 
 사용: python3 tools/update_recent.py   (바뀐 것이 없으면 파일을 그대로 둔다)
 - 블로그: https://blog.wspace.ai.kr/rss.xml 의 최신 글 5개
-- 외국어 읽기: https://read.wspace.ai.kr/<언어>/ 목록의 맨 위 지문
+- 외국어 읽기: https://dokhaehanip.com/<언어>/ 목록의 맨 위 지문
 """
 import datetime as dt
 import email.utils
@@ -12,9 +12,9 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-READ = "https://read.wspace.ai.kr"
+READ = "https://dokhaehanip.com"
 BLOG = "https://blog.wspace.ai.kr"
-LANGS = [("en", "영어"), ("ja", "일본어")]
+LANGS = [("en", "영어"), ("ja", "일본어"), ("de", "독일어")]
 
 
 def get(url):

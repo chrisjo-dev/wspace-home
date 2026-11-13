@@ -4,7 +4,7 @@
 
 ## 서비스
 
-- [매일 외국어 읽기](https://read.wspace.ai.kr/): 매일 아침 영어(CEFR B1~B2)와 일본어(JLPT N4~N5) 지문 하나. 문장별 음성, 주요 단어, 모범 해석을 함께 제공하고 메일로도 받을 수 있습니다.
+- [독해한입](https://dokhaehanip.com/): 매일 아침 영어(CEFR B1~B2), 일본어(JLPT N3), 독일어(CEFR B1~B2) 지문 하나. 문장별 음성, 주요 단어, 모범 해석을 함께 제공하고 메일로도 받을 수 있습니다.
 - [기술 블로그](https://blog.wspace.ai.kr/): GitOps, Kubernetes, CI/CD 운영과 로컬 AI 모델 실험 기록. 한국어와 영어.
 - [BrowserTools](https://util.wspace.ai.kr/): 설치 없이 브라우저에서 바로 쓰는 도구 모음. 파일은 기기 밖으로 보내지 않습니다.
 - [Brain Training](https://brain.wspace.ai.kr/): 카드 짝 맞추기 기억력 게임. 폰에 앱처럼 설치해 쓸 수 있습니다.
@@ -17,6 +17,7 @@
 ## Optional
 
 - [블로그 전체 글](https://blog.wspace.ai.kr/archive/)
-- [영어 지문 목록](https://read.wspace.ai.kr/en/)
-- [일본어 지문 목록](https://read.wspace.ai.kr/ja/)
+- [영어 지문 목록](https://dokhaehanip.com/en/)
+- [일본어 지문 목록](https://dokhaehanip.com/ja/)
+- [독일어 지문 목록](https://dokhaehanip.com/de/)
 - [개인정보처리방침](https://www.wspace.ai.kr/privacy/)
